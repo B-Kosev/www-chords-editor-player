@@ -1,3 +1,3 @@
 # WWW 2022 - Course Project
 
-## Topic - Notes editor/player
+## Topic - Chords editor/player
