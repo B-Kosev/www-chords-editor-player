@@ -1,23 +1,52 @@
 body {
-	background-color: aliceblue;
+	background-color: rgb(242, 247, 251);
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
 }
 
 header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
 	text-align: center;
-	font-size: 1.5rem;
-	background-color: rgb(76, 154, 76);
+	font-size: 2.5rem;
+	color: white;
+	background-color: #7cc106;
+	border-bottom: 2px solid gray;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	margin-top: 300px;
 }
 
 .link {
 	display: inline-block;
-	height: 200px;
-	width: 200px;
-	white-space: nowrap;
 	text-align: center;
-	margin: 0px 20px 0px 20px;
+	white-space: nowrap;
+	outline: 2px solid green;
+	border-radius: 30px;
+	margin: 0px 20px;
+	background-color: white;
+}
+
+.link a {
+	text-decoration: none;
+	font-size: 2rem;
+	color: black;
+}
+
+.link:hover {
+	outline: 3px solid black;
+	font-weight: bold;
+	background-color: #7cc106;
 }
 
 img {
-	height: 200px;
-	width: 200px;
+	height: 300px;
+	width: 300px;
 }
