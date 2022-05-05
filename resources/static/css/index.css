@@ -1,62 +1,124 @@
-body {
-	background-color: rgb(242, 247, 251);
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+:root {
+	--body-color: #e4e9f7;
+	--header-color: #fff;
+	--primary-color: #695cfe;
+	--toggle-color: #ddd;
+	--text-color: #707070;
+}
+
+* {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-family: Roboto, roboto slab, droid serif, segoe ui, system-ui, Arial, sans-serif;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "Poppins", sans-serif;
 }
 
-h1 {
-	margin: auto;
+body {
+	background-color: var(--body-color);
 }
 
-.topHeader {
-	top: 0px;
-	left: 0px;
+.header {
 	width: 100%;
-	height: 200px;
-	text-align: center;
-	font-size: 2.5rem;
-	color: white;
-	background-color: #7cc106;
-	border-bottom: 2px solid gray;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 10%;
+	color: #000;
+	background-color: var(--header-color);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
 }
 
-.links {
+.title {
+	font-family: Koulen;
+	font-size: 3.5rem;
+	letter-spacing: 0.2rem;
+
+	background-color: var(--header-color);
+	color: var(--primary-color);
+}
+
+.nav {
 	display: flex;
 	justify-content: center;
-	margin-top: 50px;
+	flex-wrap: wrap;
+	list-style: none;
+	font-size: 1.2rem;
+	background-color: var(--header-color);
 }
 
-.link {
+.nav li {
 	display: inline-block;
+	padding: 0px 20px;
+	text-transform: uppercase;
+	background-color: var(--header-color);
+}
+
+.nav a {
+	display: block;
+	padding: 0.5rem;
+	background-color: var(--header-color);
+	color: var(--text-color);
+	border-radius: 6px;
+	transition: background-color 0.5s ease;
+}
+
+.nav li a:hover {
+	color: var(--header-color);
+	background-color: var(--primary-color);
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 10%;
+}
+
+.card {
+	margin: 1rem;
 	text-align: center;
-	white-space: nowrap;
-	outline: 2px solid green;
-	border-radius: 30px;
-	margin: 0px 20px;
-	background-color: white;
+	font-size: 1.2rem;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: var(--header-color);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+	transition: background-color, transform 0.5s ease;
 }
 
-.link a {
-	text-decoration: none;
-	font-size: 2rem;
-	color: black;
+.card figcaption {
+	color: var(--text-color);
 }
 
-.link:hover {
-	outline: 3px solid black;
-	font-weight: bold;
-	background-color: #7cc106;
-	color: white;
+.card:hover {
+	transform: scale(1.1);
+	background-color: var(--primary-color);
 }
 
-.link a:hover {
-	color: white;
+.card:hover figcaption {
+	color: var(--header-color);
 }
 
 img {
-	height: 300px;
-	width: 300px;
+	height: 250px;
+	width: 250px;
+}
+
+@media (max-width: 700px) {
+	.nav {
+		flex-wrap: wrap;
+	}
+
+	.nav li {
+		width: 100%;
+		text-align: center;
+	}
+
+	.title {
+		text-align: center;
+	}
 }

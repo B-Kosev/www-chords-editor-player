@@ -1,9 +1,15 @@
-.links {
-	display: inline;
+:root {
+	--body-color: #e4e9f7;
+	--header-color: #fff;
+	--primary-color: #695cfe;
+	--toggle-color: #ddd;
+	--text-color: #707070;
 }
 
-.link {
-	margin-left: 50px;
+.cards {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 2%;
 }
 
 img {
@@ -12,6 +18,9 @@ img {
 }
 
 h2 {
-	font-size: 2rem;
-	margin-left: 50px;
+	font-family: "Poppins", sans-serif;
+	color: var(--text-color);
+	font-size: 3rem;
+	font-weight: 500;
+	margin: 2rem 0 0 1rem;
 }
