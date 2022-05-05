@@ -2,6 +2,7 @@
 
 :root {
 	--body-color: #e4e9f7;
+
 	--header-color: #fff;
 	--primary-color: #695cfe;
 	--toggle-color: #ddd;
@@ -19,7 +20,8 @@
 }
 
 body {
-	background-color: var(--body-color);
+	/* background-color: var(--body-color); */
+	background: linear-gradient(90deg, #e4e9f7, #e2e9f8, #e1eafa, #dfeafb, #dceafc, #daebfd, #d8ebfe, #d5ecff);
 }
 
 .header {
@@ -27,7 +29,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 15px 10%;
+	padding: 0px 10%;
 	color: #000;
 	background-color: var(--header-color);
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
@@ -108,9 +110,13 @@ img {
 	width: 250px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 740px) {
+	.title {
+		font-size: 2.5rem;
+	}
 	.nav {
 		flex-wrap: wrap;
+		font-size: 1rem;
 	}
 
 	.nav li {
