@@ -2,21 +2,26 @@
 
 :root {
 	--body-color: #e4e9f7;
-
 	--header-color: #fff;
 	--primary-color: #695cfe;
 	--toggle-color: #ddd;
 	--text-color: #707070;
 }
 
+/* ======== MAIN ======== */
+
 * {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
 	box-sizing: border-box;
 	text-decoration: none;
 	font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: 0;
 }
 
 body {
@@ -24,21 +29,22 @@ body {
 	background: linear-gradient(90deg, #e4e9f7, #e2e9f8, #e1eafa, #dfeafb, #dceafc, #daebfd, #d8ebfe, #d5ecff);
 }
 
+/* ======== HEADER ======== */
+
 .header {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0px 10%;
-	color: #000;
 	background-color: var(--header-color);
+
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
 }
 
 .title {
 	font-family: Koulen;
 	font-size: 3.5rem;
-	letter-spacing: 0.2rem;
 
 	background-color: var(--header-color);
 	color: var(--primary-color);
@@ -66,13 +72,16 @@ body {
 	background-color: var(--header-color);
 	color: var(--text-color);
 	border-radius: 6px;
-	transition: background-color 0.5s ease;
+	transition: background-color, transform 0.5s ease;
 }
 
 .nav li a:hover {
+	transform: scale(1.1);
 	color: var(--header-color);
 	background-color: var(--primary-color);
 }
+
+/* ======== CARDS ======== */
 
 .cards {
 	display: flex;
@@ -90,6 +99,7 @@ body {
 	background-color: var(--header-color);
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
 	transition: background-color, transform 0.5s ease;
+	cursor: pointer;
 }
 
 .card figcaption {
@@ -109,6 +119,8 @@ img {
 	height: 250px;
 	width: 250px;
 }
+
+/* ======== RESPONSIVENESS ======== */
 
 @media (max-width: 740px) {
 	.title {

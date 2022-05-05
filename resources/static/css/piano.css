@@ -1,0 +1,137 @@
+:root {
+	--body-color: #e4e9f7;
+    --background-color:#F4F9FF;
+	--header-color: #fff;
+	--primary-color: #695cfe;
+	--toggle-color: #ddd;
+	--text-color: #707070;
+}
+
+/* ======== BUTTONS ======== */
+
+.keys,
+.min-maj {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-left: 10%;
+}
+
+.keys ul,
+.min-maj ul {
+	padding: 0;
+}
+
+.keys li,
+.min-maj li {
+	display: inline-block;
+	padding: 10px 10px 0px 0px;
+}
+
+.keys button,
+.min-maj button {
+	outline: none;
+	height: 40px;
+	width: 60px;
+	text-align: center;
+	border-radius: 40px;
+	background: white;
+	/* border: 2px solid var(--primary-color); */
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.min-maj button {
+	width: 100px;
+}
+
+.keys button:hover,
+.min-maj button:hover {
+	color: var(--header-color);
+	background-color: var(--primary-color);
+	transition: background-color 0.5s ease;
+}
+
+/* ======== TEXT ======== */
+
+.keys figcaption,
+.min-maj figcaption {
+	font-size: 1.5rem;
+	color: var(--text-color);
+}
+
+h2 {
+	font-size: 3rem;
+	margin: 5% 10% 0 10%;
+	margin-bottom: 0;
+	font-weight: 500;
+	color: var(--text-color);
+}
+
+/* ======== PIANO ======== */
+
+.piano {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 3% 30%;
+	padding: 30px;
+	background-color: var(--background-color);
+	border-radius: 40px;
+	/* border: 1px solid black; */
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+}
+
+.whites,
+.blacks {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.blacks {
+	margin-top: -100px;
+	margin-left: 10px;
+}
+
+.black:nth-child(3) {
+	margin-left: 20px;
+}
+
+.octave {
+	margin: 0;
+	padding: 0;
+	width: 140px;
+	height: 100px;
+}
+
+.white {
+	background-color: white;
+	width: 20px;
+	height: 100px;
+	outline: 1px solid black;
+}
+
+.black {
+	background-color: black;
+	margin: 0px 1px;
+	width: 18px;
+	height: 60px;
+	/* outline: 1px solid black; */
+	z-index: 2;
+}
+
+.active {
+	background-color: var(--primary-color);
+}
+
+/* ======== RESPONSIVENESS ======== */
+
+@media (max-width: 740px) {
+	h2 {
+		font-size: 2rem;
+	}
+}

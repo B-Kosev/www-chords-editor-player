@@ -6,10 +6,17 @@
 	--text-color: #707070;
 }
 
+/* ======== CARDS ======== */
+
 .cards {
 	display: flex;
 	justify-content: flex-start;
 	margin-top: 2%;
+	margin-left: 80px;
+}
+
+.card {
+	margin: 0;
 }
 
 img {
@@ -17,10 +24,12 @@ img {
 	width: 150px;
 }
 
+/* ======== TEXT ======== */
+
 h2 {
 	font-family: "Poppins", sans-serif;
 	color: var(--text-color);
 	font-size: 3rem;
 	font-weight: 500;
-	margin: 2rem 0 0 1rem;
+	margin: 40px 0 0 80px;
 }
