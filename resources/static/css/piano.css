@@ -1,6 +1,6 @@
 :root {
 	--body-color: #e4e9f7;
-    --background-color:#F4F9FF;
+	--background-color: #f4f9ff;
 	--header-color: #fff;
 	--primary-color: #695cfe;
 	--toggle-color: #ddd;
@@ -78,10 +78,12 @@ h2 {
 	justify-content: center;
 	margin: 3% 30%;
 	padding: 30px;
+
+	/* NOT RESPONSIVE */
 	background-color: var(--background-color);
 	border-radius: 40px;
 	/* border: 1px solid black; */
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
 }
 
 .whites,
