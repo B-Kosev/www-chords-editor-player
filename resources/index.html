@@ -5,40 +5,46 @@
 		<link href="./static/css/index.css" rel="stylesheet" />
 	</head>
 	<body>
-		<header class="topHeader">
-			<h1>12Keys</h1>
+		<header class="header">
+			<a href="index.html" class="title">12 Keys</a>
+			<nav>
+				<ul class="nav">
+					<li><a href="chords.html">Chords</a></li>
+					<li><a href="chords.html">Lyrics</a></li>
+					<li><a href="chords.html">Tabs</a></li>
+					<li class="toggle"><i class="fa-solid fa-bars"></i></li>
+				</ul>
+			</nav>
 		</header>
 
-		<nav>
-			<section class="links">
-				<section class="link">
-					<a href="chords.html">
-						<figure class="fig">
-							<img src="./static/images/chordCharts.png" />
-							<figcaption>Chord Charts</figcaption>
-						</figure>
-					</a>
-				</section>
-
-				<section class="link">
-					<a href="">
-						<figure class="fig">
-							<img src="./static/images/lyrics.png" />
-							<figcaption>Lyrics With Chords</figcaption>
-						</figure>
-					</a>
-				</section>
-
-				<section class="link">
-					<a href="">
-						<figure class="fig">
-							<img src="./static/images/tabs.png" />
-							<figcaption>Tabs</figcaption>
-						</figure>
-					</a>
-				</section>
+		<section class="cards">
+			<section class="card">
+				<a href="chords.html">
+					<figure class="fig">
+						<img src="./static/images/chordCharts.png" />
+						<figcaption>Chord Charts</figcaption>
+					</figure>
+				</a>
 			</section>
-		</nav>
+
+			<section class="card">
+				<a href="">
+					<figure class="fig">
+						<img src="./static/images/lyrics.png" />
+						<figcaption>Lyrics With Chords</figcaption>
+					</figure>
+				</a>
+			</section>
+
+			<section class="card">
+				<a href="">
+					<figure class="fig">
+						<img src="./static/images/tabs.png" />
+						<figcaption>Tabs</figcaption>
+					</figure>
+				</a>
+			</section>
+		</section>
 
 		<footer></footer>
 	</body>
