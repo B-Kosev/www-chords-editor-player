@@ -28,8 +28,7 @@
 	padding: 10px 10px 0px 0px;
 }
 
-.keys button,
-.min-maj button {
+.btn {
 	outline: none;
 	height: 40px;
 	width: 60px;
@@ -43,15 +42,20 @@
 	cursor: pointer;
 }
 
-.min-maj button {
+.min-maj .btn {
 	width: 100px;
 }
 
-.keys button:hover,
-.min-maj button:hover {
+.keys .btn:hover,
+.min-maj .btn:hover {
 	color: var(--header-color);
 	background-color: var(--primary-color);
 	transition: background-color 0.5s ease;
+}
+
+.btn.selected {
+	color: var(--header-color);
+	background-color: var(--primary-color);
 }
 
 /* ======== TEXT ======== */
