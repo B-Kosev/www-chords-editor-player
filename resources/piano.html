@@ -22,84 +22,200 @@
 		<figure class="keys">
 			<!-- <figcaption class="chord-label">Chords</figcaption> -->
 			<ul>
-				<li><button class="btn key" type="button">C</button></li>
-				<li><button class="btn key" type="button">C#</button></li>
-				<li><button class="btn key" type="button">D</button></li>
-				<li><button class="btn key" type="button">D#</button></li>
-				<li><button class="btn key" type="button">E</button></li>
-				<li><button class="btn key" type="button">F</button></li>
-				<li><button class="btn key" type="button">F#</button></li>
-				<li><button class="btn key" type="button">G</button></li>
-				<li><button class="btn key" type="button">G#</button></li>
-				<li><button class="btn key" type="button">A</button></li>
-				<li><button class="btn key" type="button">A#</button></li>
-				<li><button class="btn key" type="button">B</button></li>
+				<li><button id="c" class="btn key selected" type="button">C</button></li>
+				<li><button id="cs" class="btn key" type="button">C#</button></li>
+				<li><button id="d" class="btn key" type="button">D</button></li>
+				<li><button id="ds" class="btn key" type="button">D#</button></li>
+				<li><button id="e" class="btn key" type="button">E</button></li>
+				<li><button id="f" class="btn key" type="button">F</button></li>
+				<li><button id="fs" class="btn key" type="button">F#</button></li>
+				<li><button id="g" class="btn key" type="button">G</button></li>
+				<li><button id="gs" class="btn key" type="button">G#</button></li>
+				<li><button id="a" class="btn key" type="button">A</button></li>
+				<li><button id="as" class="btn key" type="button">A#</button></li>
+				<li><button id="b" class="btn key" type="button">B</button></li>
 			</ul>
 		</figure>
 
 		<figure class="min-maj">
 			<!-- <figcaption>Chord type</figcaption> -->
 			<ul>
-				<li><button class="btn type" type="button">Major</button></li>
-				<li><button class="btn type" type="button">Minor</button></li>
+				<li><button id="" class="btn type selected" type="button">Major</button></li>
+				<li><button id="m" class="btn type" type="button">Minor</button></li>
 			</ul>
 		</figure>
 
-		<section class="piano">
-			<ul class="octave first">
-				<ul class="whites">
-					<li class="white 1c"></li>
-					<li class="white 1d"></li>
-					<li class="white 1e"></li>
-					<li class="white 1f"></li>
-					<li class="white 1g"></li>
-					<li class="white 1a"></li>
-					<li class="white 1b"></li>
+		<section class="pianos">
+			<section class="piano inv1">
+				<ul class="octave first">
+					<ul class="whites">
+						<li class="white 1c"></li>
+						<li class="white 1d"></li>
+						<li class="white 1e"></li>
+						<li class="white 1f"></li>
+						<li class="white 1g"></li>
+						<li class="white 1a"></li>
+						<li class="white 1b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 1cs"></li>
+						<li class="black 1ds"></li>
+						<li class="black 1fs"></li>
+						<li class="black 1gs"></li>
+						<li class="black 1as"></li>
+					</ul>
 				</ul>
-				<ul class="blacks">
-					<li class="black 1cs"></li>
-					<li class="black 1ds"></li>
-					<li class="black 1fs"></li>
-					<li class="black 1gs"></li>
-					<li class="black 1as"></li>
+				<ul class="octave second">
+					<ul class="whites">
+						<li class="white 2c"></li>
+						<li class="white 2d"></li>
+						<li class="white 2e"></li>
+						<li class="white 2f"></li>
+						<li class="white 2g"></li>
+						<li class="white 2a"></li>
+						<li class="white 2b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 2cs"></li>
+						<li class="black 2ds"></li>
+						<li class="black 2fs"></li>
+						<li class="black 2gs"></li>
+						<li class="black 2as"></li>
+					</ul>
 				</ul>
-			</ul>
-			<ul class="octave second">
-				<ul class="whites">
-					<li class="white 2c active"></li>
-					<li class="white 2d"></li>
-					<li class="white 2e active"></li>
-					<li class="white 2f"></li>
-					<li class="white 2g active"></li>
-					<li class="white 2a"></li>
-					<li class="white 2b"></li>
+				<ul class="octave third">
+					<ul class="whites">
+						<li class="white 3c"></li>
+						<li class="white 3d"></li>
+						<li class="white 3e"></li>
+						<li class="white 3f"></li>
+						<li class="white 3g"></li>
+						<li class="white 3a"></li>
+						<li class="white 3b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 3cs"></li>
+						<li class="black 3ds"></li>
+						<li class="black 3fs"></li>
+						<li class="black 3gs"></li>
+						<li class="black 3as"></li>
+					</ul>
 				</ul>
-				<ul class="blacks">
-					<li class="black 2cs"></li>
-					<li class="black 2ds"></li>
-					<li class="black 2fs"></li>
-					<li class="black 2gs"></li>
-					<li class="black 2as"></li>
+			</section>
+
+			<section class="piano inv2">
+				<ul class="octave first">
+					<ul class="whites">
+						<li class="white 1c"></li>
+						<li class="white 1d"></li>
+						<li class="white 1e"></li>
+						<li class="white 1f"></li>
+						<li class="white 1g"></li>
+						<li class="white 1a"></li>
+						<li class="white 1b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 1cs"></li>
+						<li class="black 1ds"></li>
+						<li class="black 1fs"></li>
+						<li class="black 1gs"></li>
+						<li class="black 1as"></li>
+					</ul>
 				</ul>
-			</ul>
-			<ul class="octave third">
-				<ul class="whites">
-					<li class="white 3c"></li>
-					<li class="white 3d"></li>
-					<li class="white 3e"></li>
-					<li class="white 3f"></li>
-					<li class="white 3g"></li>
-					<li class="white 3a"></li>
-					<li class="white 3b"></li>
+				<ul class="octave second">
+					<ul class="whites">
+						<li class="white 2c"></li>
+						<li class="white 2d"></li>
+						<li class="white 2e"></li>
+						<li class="white 2f"></li>
+						<li class="white 2g"></li>
+						<li class="white 2a"></li>
+						<li class="white 2b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 2cs"></li>
+						<li class="black 2ds"></li>
+						<li class="black 2fs"></li>
+						<li class="black 2gs"></li>
+						<li class="black 2as"></li>
+					</ul>
 				</ul>
-				<ul class="blacks">
-					<li class="black 3cs"></li>
-					<li class="black 3ds"></li>
-					<li class="black 3fs"></li>
-					<li class="black 3gs"></li>
-					<li class="black 3as"></li>
+				<ul class="octave third">
+					<ul class="whites">
+						<li class="white 3c"></li>
+						<li class="white 3d"></li>
+						<li class="white 3e"></li>
+						<li class="white 3f"></li>
+						<li class="white 3g"></li>
+						<li class="white 3a"></li>
+						<li class="white 3b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 3cs"></li>
+						<li class="black 3ds"></li>
+						<li class="black 3fs"></li>
+						<li class="black 3gs"></li>
+						<li class="black 3as"></li>
+					</ul>
 				</ul>
-			</ul>
+			</section>
+
+			<section class="piano inv3">
+				<ul class="octave first">
+					<ul class="whites">
+						<li class="white 1c"></li>
+						<li class="white 1d"></li>
+						<li class="white 1e"></li>
+						<li class="white 1f"></li>
+						<li class="white 1g"></li>
+						<li class="white 1a"></li>
+						<li class="white 1b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 1cs"></li>
+						<li class="black 1ds"></li>
+						<li class="black 1fs"></li>
+						<li class="black 1gs"></li>
+						<li class="black 1as"></li>
+					</ul>
+				</ul>
+				<ul class="octave second">
+					<ul class="whites">
+						<li class="white 2c"></li>
+						<li class="white 2d"></li>
+						<li class="white 2e"></li>
+						<li class="white 2f"></li>
+						<li class="white 2g"></li>
+						<li class="white 2a"></li>
+						<li class="white 2b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 2cs"></li>
+						<li class="black 2ds"></li>
+						<li class="black 2fs"></li>
+						<li class="black 2gs"></li>
+						<li class="black 2as"></li>
+					</ul>
+				</ul>
+				<ul class="octave third">
+					<ul class="whites">
+						<li class="white 3c"></li>
+						<li class="white 3d"></li>
+						<li class="white 3e"></li>
+						<li class="white 3f"></li>
+						<li class="white 3g"></li>
+						<li class="white 3a"></li>
+						<li class="white 3b"></li>
+					</ul>
+					<ul class="blacks">
+						<li class="black 3cs"></li>
+						<li class="black 3ds"></li>
+						<li class="black 3fs"></li>
+						<li class="black 3gs"></li>
+						<li class="black 3as"></li>
+					</ul>
+				</ul>
+			</section>
 		</section>
 
 		<script

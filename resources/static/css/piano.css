@@ -76,18 +76,24 @@ h2 {
 
 /* ======== PIANO ======== */
 
+.pianos {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	margin: 3% 1%;
+	background-color: var(--background-color);
+	border-radius: 40px;
+	border: 1px solid black;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+}
+
 .piano {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 3% 30%;
 	padding: 30px;
-
-	/* NOT RESPONSIVE */
-	background-color: var(--background-color);
-	border-radius: 40px;
-	/* border: 1px solid black; */
-	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
 }
 
 .whites,

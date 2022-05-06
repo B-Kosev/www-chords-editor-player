@@ -1,6 +1,6 @@
 <?php
 
-class Chord {
+class Chord implements \JsonSerializable{
     private $id; // 'c' or 'cm' etc
 
     private $name; // C Minor
@@ -42,5 +42,18 @@ class Chord {
 
     public function getInversion(): int {
         return $this->inversion;
+    }
+
+    public static function createFromAssoc(array $assocChord): Chord {
+        return new Chord($assocChord['id'], 
+            $assocChord['name'], 
+            $assocChord['first'], 
+            $assocChord['third'],
+            $assocChord['fifth'], 
+            $assocChord['inversion']);
+    }
+
+    public function jsonSerialize(){
+        return get_object_vars($this);
     }
 }
