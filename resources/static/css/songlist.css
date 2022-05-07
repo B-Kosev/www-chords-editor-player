@@ -1,0 +1,54 @@
+:root {
+	--body-color: #e4e9f7;
+	--header-color: #fff;
+	--primary-color: #695cfe;
+	--toggle-color: #ddd;
+	--text-color: #707070;
+}
+
+/* ======== CARDS ======== */
+
+.cards {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 2%;
+	margin-left: 80px;
+}
+
+.card {
+	/* margin: 0; */
+}
+
+.card:hover h3,
+.card:hover p {
+	color: var(--header-color);
+}
+
+.card:hover h3 {
+	border-bottom: 1px solid var(--header-color);
+}
+
+img {
+	height: 150px;
+	width: 150px;
+}
+
+/* ======== TEXT ======== */
+
+h2 {
+	font-family: "Poppins", sans-serif;
+	color: var(--text-color);
+	font-size: 3rem;
+	font-weight: 500;
+	margin: 40px 0 0 80px;
+}
+
+h3,
+p {
+	font-family: "Poppins", sans-serif;
+	color: var(--text-color);
+}
+
+h3 {
+	border-bottom: 1px solid var(--text-color);
+}

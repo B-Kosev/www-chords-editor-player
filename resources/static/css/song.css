@@ -1,0 +1,91 @@
+:root {
+	--body-color: #e4e9f7;
+	--header-color: #fff;
+	--primary-color: #695cfe;
+	--toggle-color: #ddd;
+	--text-color: #707070;
+}
+
+/* ======== CONTENT ======== */
+
+.song-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.song-info > * {
+	margin: 10px 0 10px 0;
+}
+
+.song-data {
+	display: block;
+	width: 75%;
+	height: 75%;
+	text-align: center;
+	border: 2px solid black;
+	background-color: var(--header-color);
+	padding: 20px;
+}
+
+/* ======== TRANSPOSE ======== */
+
+.keys {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-left: 10%;
+	padding: 0;
+}
+
+.keys li {
+	display: inline-block;
+	padding: 10px 10px 0px 0px;
+}
+
+.btn {
+	outline: none;
+	height: 40px;
+	width: 60px;
+	text-align: center;
+	border-radius: 40px;
+	background: white;
+	/* border: 2px solid var(--primary-color); */
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.keys .btn:hover {
+	color: var(--header-color);
+	background-color: var(--primary-color);
+	transition: background-color 0.5s ease;
+}
+
+.btn.selected {
+	color: var(--header-color);
+	background-color: var(--primary-color);
+}
+
+.keys h4 {
+	display: inline-block;
+	padding: 10px 20px 0px 0px;
+}
+
+/* ======== TEXT ======== */
+
+h2 {
+	font-family: "Poppins", sans-serif;
+	color: var(--text-color);
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+h4 {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.2rem;
+	color: var(--text-color);
+	font-weight: 500;
+}
