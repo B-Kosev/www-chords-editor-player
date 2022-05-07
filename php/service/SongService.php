@@ -20,7 +20,7 @@ class SongService {
 
     public static function getAllSongs(): array {
 
-        $sql   = "SELECT * FROM `songs` ORDER BY id ASC";
+        $sql   = "SELECT * FROM `songs` ORDER BY title ASC";
         $selectStatement = (new Database())->getConnection()->prepare($sql);
         $selectStatement->execute();
 

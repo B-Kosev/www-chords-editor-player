@@ -15,7 +15,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $response = SongService::getSongByTitle($songTitle);
         } else {
             $response = SongService::getAllSongs();
-            break;
         }
 
         // print_r($response);

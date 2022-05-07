@@ -25,6 +25,7 @@
 	height: 75%;
 	text-align: center;
 	border: 2px solid black;
+	border-radius: 60px;
 	background-color: var(--header-color);
 	padding: 20px;
 }
