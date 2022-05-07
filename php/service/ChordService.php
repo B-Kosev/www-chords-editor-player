@@ -9,6 +9,7 @@ class ChordService {
 
         $selectStatement->execute(['chord_id' => $chordId]);
 
+        // CAN BE REFACTORED - SEE SON SERVICE
         $chordDbRows = $selectStatement->fetchAll();
 
         if (!$chordDbRows) {
