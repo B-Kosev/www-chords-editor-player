@@ -3,16 +3,21 @@ $(document).ready(function () {
 	fetch("../php/web/SongController.php")
 		.then((response) => response.json())
 		.then(fillList);
+
+	// $(".card").on("click", function () {
+	// 	console.log("clicked");
+	// 	var title = $(this).find(".song-title").value;
+	// 	console.log("title");
+	// });
 });
 
 const fillList = (songs) => {
 	songs.forEach((song) => {
-		console.log(song.title);
-
 		var card = document.createElement("section");
 		card.setAttribute("class", "card");
 
 		var a = document.createElement("a");
+		a.setAttribute("class", "song-link");
 		a.setAttribute("href", "song.html");
 
 		var title = document.createElement("h3");
@@ -38,9 +43,24 @@ const fillList = (songs) => {
 
 		card.appendChild(a);
 
+		// card.addEventListener("click", cardClickHandler);
+
 		$(".cards").append(card);
 	});
 };
+
+$(".cards").on("click", ".card", function () {
+	var title = $(this).find(".song-title").text();
+	// console.log(title);
+	localStorage.setItem("song-title", title);
+});
+
+// not passing the correct element
+// const cardClickHandler = (element) => {
+// 	console.log(element.target);
+// 	var title = $(this).find(".song-title").value;
+// 	console.log(title);
+// };
 
 // <section class="card">
 // 	<a href="song.html">
