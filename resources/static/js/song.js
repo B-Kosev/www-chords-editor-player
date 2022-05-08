@@ -8,9 +8,9 @@ $(document).ready(function () {
 
 const fillData = (song) => {
 	$(".song-title").text(song.title);
-	$(".song-author").text(song.author);
-	$(".song-key").text(song.key);
-	$(".song-year").text(song.year);
+	$(".song-author").text("Author: " + song.author);
+	$(".song-key").text("Key: " + song.key);
+	$(".song-year").text("Year: " + song.year);
 	$(".song-data").text(song.text);
 
 	parseText();
