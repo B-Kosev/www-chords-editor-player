@@ -3,12 +3,6 @@ $(document).ready(function () {
 	fetch("../php/web/SongController.php")
 		.then((response) => response.json())
 		.then(fillList);
-
-	// $(".card").on("click", function () {
-	// 	console.log("clicked");
-	// 	var title = $(this).find(".song-title").value;
-	// 	console.log("title");
-	// });
 });
 
 const fillList = (songs) => {
@@ -43,24 +37,14 @@ const fillList = (songs) => {
 
 		card.appendChild(a);
 
-		// card.addEventListener("click", cardClickHandler);
-
 		$(".cards").append(card);
 	});
 };
 
 $(".cards").on("click", ".card", function () {
 	var title = $(this).find(".song-title").text();
-	// console.log(title);
 	localStorage.setItem("song-title", title);
 });
-
-// not passing the correct element
-// const cardClickHandler = (element) => {
-// 	console.log(element.target);
-// 	var title = $(this).find(".song-title").value;
-// 	console.log(title);
-// };
 
 // <section class="card">
 // 	<a href="song.html">

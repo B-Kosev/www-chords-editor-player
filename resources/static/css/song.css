@@ -28,6 +28,14 @@
 	border-radius: 60px;
 	background-color: var(--header-color);
 	padding: 20px;
+	line-height: 2em;
+}
+
+.chord {
+	position: absolute;
+	font-weight: bold;
+	color: red;
+	margin-top: -1em;
 }
 
 /* ======== TRANSPOSE ======== */
