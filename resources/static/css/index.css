@@ -50,7 +50,8 @@ body {
 	color: var(--primary-color);
 }
 
-.nav {
+.nav,
+.auth {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -59,20 +60,37 @@ body {
 	background-color: var(--header-color);
 }
 
-.nav li {
+.nav li,
+.auth li {
 	display: inline-block;
 	padding: 0px 20px;
 	text-transform: uppercase;
 	background-color: var(--header-color);
 }
 
-.nav a {
+/* .auth li {
+	background-color: var(--primary-color);
+} */
+
+.nav a,
+.auth a {
 	display: block;
 	padding: 0.5rem;
 	background-color: var(--header-color);
 	color: var(--text-color);
 	border-radius: 6px;
 	transition: background-color, transform 0.5s ease;
+	text-align: center;
+}
+
+.auth a {
+	color: var(--header-color);
+	background-color: var(--primary-color);
+	white-space: nowrap;
+}
+
+.auth li a:hover {
+	transform: scale(1.1);
 }
 
 .nav li a:hover {
@@ -138,5 +156,15 @@ img {
 
 	.title {
 		text-align: center;
+	}
+
+	.auth {
+		width: 100%;
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.auth li {
+		margin-bottom: 5px;
 	}
 }

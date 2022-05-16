@@ -3,7 +3,7 @@
 	<head>
 		<title>Chord Editor</title>
 		<link href="./static/css/index.css" rel="stylesheet" />
-		<link href="./static/css/instruments.css" rel="stylesheet" />
+		<link href="./static/css/login.css" rel="stylesheet" />
 	</head>
 	<body>
 		<header class="header">
@@ -21,17 +21,13 @@
 			</ul>
 		</header>
 
-		<h2>Instruments</h2>
-
-		<section class="cards">
-			<section class="card">
-				<a href="piano.html">
-					<figure class="fig">
-						<img src="./static/images/piano.jpg" />
-						<figcaption>Piano</figcaption>
-					</figure>
-				</a>
-			</section>
+		<section>
+			<form class="form" method="post">
+				<label>Log in</label>
+				<input class="field" type="text" placeholder="Username" name="username" required />
+				<input class="field" type="password" placeholder="Password" name="password" required />
+				<input class="btn" type="submit" value="Sign in" />
+			</form>
 		</section>
 
 		<footer></footer>

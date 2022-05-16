@@ -25,6 +25,14 @@ CREATE TABLE IF NOT EXISTS `songs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
 INSERT INTO `chords` (`id`, `name`, `first`, `third`, `fifth`, `inversion`) VALUES
 ('c', 'C Major', '2c', '2e', '2g', 1),
 ('c', 'C Major', '2e', '2g', '3c', 2),
@@ -153,4 +161,7 @@ When [E]we’ve been there ten th[A]ousand y[E]ears,
 Bright sh[C#m]ining as the s[B]un,
 We’ve [E]no less days to s[A]ing God’s pr[E]aise
 Than wh[C#m]en we’d f[B]irst beg[E]un.');
+
+INSERT INTO `users`(`username`,`email`,`password`) VALUES
+('admin','admin@example.com','admin');
 COMMIT;
