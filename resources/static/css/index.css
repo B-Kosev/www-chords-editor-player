@@ -4,6 +4,7 @@
 	--body-color: #e4e9f7;
 	--header-color: #fff;
 	--primary-color: #695cfe;
+	--primary-color-dark: #5245da;
 	--toggle-color: #ddd;
 	--text-color: #707070;
 }
@@ -91,6 +92,7 @@ body {
 
 .auth li a:hover {
 	transform: scale(1.1);
+	background-color: var(--primary-color-dark);
 }
 
 .nav li a:hover {
