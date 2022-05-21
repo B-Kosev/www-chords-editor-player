@@ -1,25 +1,8 @@
-$(document).ready(function () {
-	// On load of page preselect chord
+window.onload = function () {
 	fetchChord();
+};
 
-	// Click handlers for making the button active
-	$(".btn.key").on("click", function () {
-		$(".btn.key").removeClass("selected");
-		$(this).addClass("selected");
-	});
-
-	$(".btn.type").on("click", function () {
-		$(".btn.type").removeClass("selected");
-		$(this).addClass("selected");
-	});
-
-	// Click Handlers for selecting chord and type
-	$(".btn.key, .btn.type").on("click", function (e) {
-		fetchChord();
-	});
-});
-
-function fetchChord() {
+const fetchChord = () => {
 	const chordId = $(".btn.key.selected").attr("id");
 	const chordType = $(".btn.type.selected").attr("id");
 	const chord = chordId + chordType;
@@ -27,7 +10,33 @@ function fetchChord() {
 	fetch("../php/web/ChordController.php?id=" + chord)
 		.then((response) => response.json())
 		.then(displayChord);
-}
+};
+
+// Click handlers for making the buttons active
+document.querySelectorAll(".btn.key").forEach((element) => {
+	element.addEventListener("click", function (e) {
+		document.querySelectorAll(".btn.key").forEach((item) => {
+			item.classList.remove("selected");
+		});
+		e.target.classList.add("selected");
+	});
+});
+
+document.querySelectorAll(".btn.type").forEach((element) => {
+	element.addEventListener("click", function (e) {
+		document.querySelectorAll(".btn.type").forEach((item) => {
+			item.classList.remove("selected");
+		});
+		e.target.classList.add("selected");
+	});
+});
+
+// Click Handlers for selecting chord and type
+document.querySelectorAll(".btn.key, .btn.type").forEach((element) => {
+	element.addEventListener("click", function (e) {
+		fetchChord();
+	});
+});
 
 const displayChord = (inversions) => {
 	var first = inversions[0];
@@ -35,22 +44,26 @@ const displayChord = (inversions) => {
 	var third = inversions[2];
 
 	// First inversion
-	$(".piano.inv1 .white, .piano.inv1 .black").removeClass("active");
-	$(".piano.inv1 ." + first.first).addClass("active");
-	$(".piano.inv1 ." + first.third).addClass("active");
-	$(".piano.inv1 ." + first.fifth).addClass("active");
+	document.querySelectorAll(".piano.inv1 .white, .piano.inv1 .black").forEach((element) => {
+		element.classList.remove("active");
+	});
+	document.querySelector(".piano.inv1 ." + first.first).classList.add("active");
+	document.querySelector(".piano.inv1 ." + first.third).classList.add("active");
+	document.querySelector(".piano.inv1 ." + first.fifth).classList.add("active");
 
 	// Second inversion
-	$(".piano.inv2 .white, .piano.inv2 .black").removeClass("active");
-	$(".piano.inv2 ." + second.first).addClass("active");
-	$(".piano.inv2 ." + second.third).addClass("active");
-	$(".piano.inv2 ." + second.fifth).addClass("active");
+	document.querySelectorAll(".piano.inv2 .white, .piano.inv2 .black").forEach((element) => {
+		element.classList.remove("active");
+	});
+	document.querySelector(".piano.inv2 ." + second.first).classList.add("active");
+	document.querySelector(".piano.inv2 ." + second.third).classList.add("active");
+	document.querySelector(".piano.inv2 ." + second.fifth).classList.add("active");
 
 	// Third inversion
-	$(".piano.inv3 .white, .piano.inv3 .black").removeClass("active");
-	$(".piano.inv3 ." + third.first).addClass("active");
-	$(".piano.inv3 ." + third.third).addClass("active");
-	$(".piano.inv3 ." + third.fifth).addClass("active");
-
-	// console.log(first.first);
+	document.querySelectorAll(".piano.inv3 .white, .piano.inv3 .black").forEach((element) => {
+		element.classList.remove("active");
+	});
+	document.querySelector(".piano.inv3 ." + third.first).classList.add("active");
+	document.querySelector(".piano.inv3 ." + third.third).classList.add("active");
+	document.querySelector(".piano.inv3 ." + third.fifth).classList.add("active");
 };
