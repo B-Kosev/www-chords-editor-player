@@ -53,7 +53,7 @@ class UserService {
         return User::createFromForm($userDbRows);
     }
 
-    public static function isUsernameFree(string $username) : bool {
+    public static function isUsernameAvailable(string $username) : bool {
 
         $sql   = "SELECT * FROM `users` WHERE username = :username";
         $selectStatement = (new Database())->getConnection()->prepare($sql);
@@ -69,7 +69,7 @@ class UserService {
         return false;
     }
 
-    public static function isEmailFree(string $email): bool {
+    public static function isEmailAvailable(string $email): bool {
 
         $sql   = "SELECT * FROM `users` WHERE email = :email";
         $selectStatement = (new Database())->getConnection()->prepare($sql);

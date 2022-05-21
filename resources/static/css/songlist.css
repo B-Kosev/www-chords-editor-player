@@ -6,6 +6,33 @@
 	--text-color: #707070;
 }
 
+.newSong {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	font-size: 1.2rem;
+	margin: 40px 0 0 96px;
+}
+
+.link {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	margin: 0 5% 0 0;
+	color: var(--header-color);
+	background-color: var(--primary-color);
+	white-space: nowrap;
+	border-radius: 6px;
+	transition: background-color, transform 0.5s ease;
+	text-align: center;
+	padding-top: 10px;
+	height: 45px;
+}
+
+.link:hover {
+	transform: scale(1.1);
+	background-color: var(--primary-color-dark);
+}
+
 /* ======== CARDS ======== */
 
 .cards {
@@ -40,7 +67,7 @@ h2 {
 	color: var(--text-color);
 	font-size: 3rem;
 	font-weight: 500;
-	margin: 40px 0 0 96px;
+	/* margin: 40px 0 0 96px; */
 }
 
 h3,
