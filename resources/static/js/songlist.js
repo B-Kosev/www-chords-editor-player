@@ -1,9 +1,9 @@
-$(document).ready(function () {
+window.onload = function () {
 	// Fetch data to populate the song list
 	fetch("../php/web/SongController.php")
 		.then((response) => response.json())
 		.then(fillList);
-});
+};
 
 const fillList = (songs) => {
 	songs.forEach((song) => {
@@ -37,13 +37,15 @@ const fillList = (songs) => {
 
 		card.appendChild(a);
 
-		$(".cards").append(card);
+		document.querySelector(".cards").appendChild(card);
 	});
 };
 
-$(".cards").on("click", ".card", function () {
-	var title = $(this).find(".song-title").text();
-	localStorage.setItem("song-title", title);
+document.querySelectorAll(".card").forEach((element) => {
+	element.addEventListener("click", function (e) {
+		var title = element.querySelector(".song-title").innerHTML;
+		localStorage.setItem("song-title", title);
+	});
 });
 
 // <section class="card">

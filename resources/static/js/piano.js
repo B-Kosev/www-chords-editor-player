@@ -3,8 +3,8 @@ window.onload = function () {
 };
 
 const fetchChord = () => {
-	const chordId = $(".btn.key.selected").attr("id");
-	const chordType = $(".btn.type.selected").attr("id");
+	const chordId = document.querySelector(".btn.key.selected").getAttribute("id");
+	const chordType = document.querySelector(".btn.type.selected").getAttribute("id");
 	const chord = chordId + chordType;
 
 	fetch("../php/web/ChordController.php?id=" + chord)
