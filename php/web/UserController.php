@@ -1,79 +1,88 @@
 <?php
 
+    session_start();
+
     require_once '../model/Bootstrap.php';
     Bootstrap::initApp();
 
     switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'GET': {
-        // $username = $_GET['username'];
-        // $password = $_GET['password'];
-
-        // $conn = new mysqli("localhost","root","","chordsplayereditor");
-
-        // if($conn->connect_error){
-        //     die("Connection Failed : ".$conn->connect_error);
-        // }else{
-        // }
-
+        $logged = isset($_SESSION['used_id']);
+        break;
     }
     case 'POST': {
-        if(isset($_POST['register'])){
-            $email = $_POST['email'];
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $conPassword = $_POST['confirm_password'];
+        $requestBody = json_decode(file_get_contents("php://input"), true);
+
+        if(isset($requestBody['register'])){
+            $email = $requestBody['email'];
+            $username = $requestBody['username'];
+            $password = $requestBody['password'];
+            $conPassword = $requestBody['confirm_password'];
+            $emailErrorMsg = '';
+            $usernameErrorMsg = '';
+            $passwordErrorMsg = '';
+            $conPasswordErrorMsg  = '';
 
             $success = true;
             $errors = array();
 
             if(empty($email)){
                 $success = false;
-                $errors += ["email" => "Email field is required."];
+                $emailErrorMsg = "Email field is required.";
+                $errors += ["email" => $emailErrorMsg];
             }
 
             if(empty($username)){
                 $success = false;
-                $errors += ["username" => "Username field is required."];
+                $usernameErrorMsg = "Username field is required.";
+                $errors += ["username" => $usernameErrorMsg];
             }
 
             if(empty($password)){
                 $success = false;
-                $errors += ["password" => "Pasword field is required."];
+                $passwordErrorMsg = "Pasword field is required.";
+                $errors += ["password" => $passwordErrorMsg];
             }
 
             if(empty($conPassword)){
                 $success = false;
-                $errors += ["conPassword" => "Confirm password field is required."];
+                $conPasswordErrorMsg = "Confirm password field is required.";
+                $errors += ["conPassword" => $conPasswordErrorMsg];
             }
 
             if(strlen($username) > 0 and strlen($username) < 6 or strlen($username) > 30){
                 $success = false;
-                $errors += ["username" => "Username must be between 6 and 30 symbols."];
+                $username = "Username must be between 6 and 30 symbols.";
+                $errors += ["username" => $username];
             }
 
             if(strlen($password) > 0 and strlen($password) < 8 ){
                 $success = false;
-                $errors += ["password" => "Password must be at least 8 symbols."];
+                $passwordErrorMsg = "Password must be at least 8 symbols.";
+                $errors += ["password" => $passwordErrorMsg];
             }
 
             if($password !== $conPassword){
                 $success = false;
-                $errors += ["password match" => "Passwords doesn't match."];
+                $conPasswordErrorMsg = "Passwords doesn't match.";
+                $errors += ["conPassword" => $conPasswordErrorMsg];
             }
 
-            $usernameResponse = UserService::isUsernameFree($username);
+            $usernameResponse = UserService::isUsernameAvailable($username);
 
             if($usernameResponse == false ){
                 $success = false;
-                $errors += ["existing username" => "There is already a user with this username."];
+                $usernameErrorMsg = "There is already registered user with this username.";
+                $errors += ["username" => $usernameErrorMsg];
             }
 
-            $emailResponse = UserService::isEmailFree($email);
+            $emailResponse = UserService::isEmailAvailable($email);
 
             if($emailResponse == false ){
                 $success = false;
-                $errors += ["existing email" => "There is already a user with this email."];
+                $emailErrorMsg = "There is already registered user with this email.";
+                $errors += ["email" => $emailErrorMsg];
             }
 
             if(!$success){
@@ -81,7 +90,7 @@
                 // header("Location: /project/www-chords-editor-player/resources/register.html");
             }else{
                 $conn = new mysqli("localhost","root","","chordsplayereditor");
-
+                
                 if($conn->connect_error){
                     die("Connection Failed : ".$conn->connect_error);
                 }else{
@@ -90,13 +99,15 @@
                     $stmt->execute();
                     $stmt->close();
                     $conn->close();
+                    echo json_encode(["success" => true]);
                     header("Location: /project/www-chords-editor-player/resources/index.html");
                 }
             }
         }
-        if(isset($_POST['login'])){
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+        if(isset($requestBody['login'])){
+
+            $username = $requestBody['username'];
+            $password = $requestBody['password'];
 
             $success = true;
             $errors = array();
@@ -115,7 +126,7 @@
 
             if(!$response){
                 $success = false;
-                $errors += ["credentials" => "Bad credentials."];
+                $errors += ["credentials" => "Wrong combination of username and password."];
             }
 
             if(!$success){

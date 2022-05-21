@@ -17,7 +17,7 @@
 .field,
 label {
 	color: var(--text-color);
-	margin: 0 0 15px 0;
+	margin: 15px 0 0 0;
 	/* width: 300px; */
 	width: 50%;
 	min-width: 170px;
@@ -63,4 +63,14 @@ label {
 	border-style: solid;
 	color: var(--header-color);
 	background-color: var(--primary-color);
+}
+
+.errorMsg {
+	display: none;
+	width: 50%;
+	min-width: 170px;
+	text-align: left;
+	color: #d63301;
+	font-size: 0.9rem;
+	margin: 0 0 5px 0;
 }
