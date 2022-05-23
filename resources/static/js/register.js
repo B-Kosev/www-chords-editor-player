@@ -50,12 +50,11 @@ const registerValidation = {
 				}
 
 				if (response.success == true) {
-					window.location.replace("/project/www-chords-editor-player/resources/index.html");
+					window.location.replace("../resources/index.html");
 				}
 			})
 			.catch(() => {
 				console.log("error");
-				// loginValidation.displayErrorMessage("Error in form validating.");
 			});
 	},
 

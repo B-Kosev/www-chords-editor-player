@@ -1,6 +1,5 @@
 window.onload = function () {
 	document.getElementById("login-form").addEventListener("submit", loginValidation.submitForm);
-	// document.getElementById("logout-button").addEventListener("click", logout);
 };
 
 const loginValidation = {
@@ -45,7 +44,7 @@ const loginValidation = {
 				}
 
 				if (response.success == true) {
-					window.location.replace("/project/www-chords-editor-player/resources/index.html");
+					window.location.replace("../resources/index.html");
 				}
 			})
 			.catch(() => {
@@ -103,44 +102,4 @@ const loginValidation = {
 
 		password.setAttribute("style", "border: solid red");
 	},
-
-	// removeButtons: () => {
-	// 	const loginButton = document.getElementById("login-button");
-	// 	const registerButton = document.getElementById("register-button");
-	// 	const greeting = document.getElementById("greeting");
-	// 	const logoutButton = document.getElementById("logout-button");
-
-	// 	loginButton.setAttribute("style", "display: none");
-	// 	registerButton.setAttribute("style", "display: none");
-
-	// 	greeting.setAttribute("style", "display: flex");
-	// 	logoutButton.setAttribute("style", "display: flex");
-	// },
-
-	// checkLoginStatus: () => {
-	// 	return fetch("../php/web/UserController.php").then((response) => {
-	// 		if (response.ok) {
-	// 			return response.json();
-	// 		} else {
-	// 			throw new Error();
-	// 		}
-	// 	});
-	// },
 };
-
-// const logout = () => {
-// 	fetch("../php/web/UserController.php", {
-// 		method: "DELETE",
-// 	}).then(() => {
-// 		document.location.reload();
-// 	});
-// };
-
-// loginValidation.checkLoginStatus().then((loginStatus) => {
-// 	if (loginStatus.logged) {
-// 		loginValidation.removeButtons();
-// 		document.getElementById("greeting").innerHTML = "Hi, " + loginStatus.session.username;
-// 	} else {
-// 		console.log("not logged");
-// 	}
-// });
