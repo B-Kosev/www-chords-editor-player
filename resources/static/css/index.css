@@ -101,6 +101,19 @@ body {
 	background-color: var(--primary-color);
 }
 
+#greeting,
+#logout-button {
+	display: none;
+}
+
+#greeting {
+	padding: 10px 0 0 0;
+}
+
+#logout-button:hover {
+	cursor: pointer;
+}
+
 /* ======== CARDS ======== */
 
 .cards {

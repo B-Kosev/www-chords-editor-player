@@ -163,5 +163,5 @@ We’ve [E]no less days to s[A]ing God’s pr[E]aise
 Than wh[C#m]en we’d f[B]irst beg[E]un.');
 
 INSERT INTO `users`(`username`,`email`,`password`) VALUES
-('admin','admin@example.com','admin');
+('admin','admin@example.com','d033e22ae348aeb5660fc2140aec35850c4da997');
 COMMIT;

@@ -3,8 +3,9 @@
 	<head>
 		<title>Chord Editor</title>
 		<link href="./static/css/index.css" rel="stylesheet" />
-		<link href="./static/css/login.css" rel="stylesheet" />
+		<link href="./static/css/auth.css" rel="stylesheet" />
 		<script src="./static/js/register.js"></script>
+		<!-- <script src="./static/js/loginStatus.js"></script> -->
 	</head>
 	<body>
 		<header class="header">
@@ -17,8 +18,10 @@
 				</ul>
 			</nav>
 			<ul class="auth">
-				<li><a href="login.html">Sign in</a></li>
-				<li><a href="register.html">Sign up</a></li>
+				<li><a href="login.html" id="login-button">Sign in</a></li>
+				<li><a href="register.html" id="register-button">Sign up</a></li>
+				<li><span id="greeting"></span></li>
+				<li><a id="logout-button">Log out</a></li>
 			</ul>
 		</header>
 
@@ -26,10 +29,10 @@
 			<!-- action="../php/web/UserController.php" method="post"  -->
 			<form class="form" id="register-form">
 				<label>Register</label>
-				<input type="email" class="field" placeholder="E-mail" name="email" id="email" required />
-				<span class="errorMsg" id="email-err"></span>
 				<input type="text" class="field" placeholder="Username" name="username" id="username" required />
 				<span class="errorMsg" id="username-err"></span>
+				<input type="email" class="field" placeholder="E-mail" name="email" id="email" required />
+				<span class="errorMsg" id="email-err"></span>
 				<input type="password" class="field" placeholder="Password" name="password" id="password" required />
 				<span class="errorMsg" id="password-err"></span>
 				<input

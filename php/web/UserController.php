@@ -8,7 +8,8 @@
     switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'GET': {
-        $logged = isset($_SESSION['used_id']);
+        $logged = isset($_SESSION['username']);
+        echo json_encode(["logged" => $logged, "session" => $_SESSION]);
         break;
     }
     case 'POST': {
@@ -85,22 +86,24 @@
                 $errors += ["email" => $emailErrorMsg];
             }
 
+            $hashedPassword = sha1($password);
+
             if(!$success){
+                $errors += ["success" => $success];
                 echo json_encode($errors, JSON_UNESCAPED_UNICODE);
-                // header("Location: /project/www-chords-editor-player/resources/register.html");
             }else{
                 $conn = new mysqli("localhost","root","","chordsplayereditor");
-                
+        
                 if($conn->connect_error){
                     die("Connection Failed : ".$conn->connect_error);
                 }else{
                     $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
-                    $stmt->bind_param("sss", $username, $password, $email);
+                    $stmt->bind_param("sss", $username, $hashedPassword, $email);
                     $stmt->execute();
                     $stmt->close();
                     $conn->close();
-                    echo json_encode(["success" => true]);
-                    header("Location: /project/www-chords-editor-player/resources/index.html");
+
+                    echo json_encode(["success" => $success]);
                 }
             }
         }
@@ -122,7 +125,9 @@
                 $errors += ["password" => "Pasword field is required."];
             }
 
-            $response = UserService::checkCredentials($username, $password);
+            $hashedPassword = sha1($password);
+
+            $response = UserService::checkCredentials($username, $hashedPassword);
 
             if(!$response){
                 $success = false;
@@ -132,8 +137,17 @@
             if(!$success){
                 echo json_encode($errors, JSON_UNESCAPED_UNICODE);
             }else{
-                echo "success";
+
+                // $_SESSION['user_id'] = 26;
+                $_SESSION['username'] = $username;
+
+                echo json_encode(["success" => true]);
             }
         }
+        break;
+    }
+    case 'DELETE': {
+        session_destroy();
+        echo json_encode(["success" => true]);
     }
 }
