@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chord Editor</title>
+		<link href="./static/css/index.css" rel="stylesheet" />
+		<link href="./static/css/auth.css" rel="stylesheet" />
+		<script src="./static/js/loginStatus.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<a href="index.html" class="title">12 Keys</a>
+			<nav>
+				<ul class="nav">
+					<li><a href="instruments.html">Chords</a></li>
+					<li><a href="songlist.html">Lyrics</a></li>
+					<li><a href="#">Tabs</a></li>
+				</ul>
+			</nav>
+			<ul class="auth">
+				<li><a href="login.html" id="login-button">Sign in</a></li>
+				<li><a href="register.html" id="register-button">Sign up</a></li>
+				<li><span id="greeting"></span></li>
+				<li><a id="logout-button">Log out</a></li>
+			</ul>
+		</header>
+
+		<section>
+			<form class="form" id="song-form">
+				<label>Add song</label>
+				<input class="field" type="text" placeholder="Title" name="title" id="title" required />
+				<span class="errorMsg" id="title-err"></span>
+				<input class="field" type="text" placeholder="Author" name="author" id="author" required />
+				<span class="errorMsg" id="author-err"></span>
+				<input class="field" type="text" placeholder="Key" name="key" id="key" required />
+				<span class="errorMsg" id="key-err"></span>
+				<input class="field" type="number" placeholder="Year" name="year" id="year" required />
+				<span class="errorMsg" id="year-err"></span>
+				<textarea class="field" placeholder="Song lyrics" name="text" id="text" required></textarea>
+				<span class="errorMsg" id="text-err"></span>
+				<input class="btn" type="submit" value="Add Song" name="add-song" />
+			</form>
+		</section>
+
+		<footer></footer>
+	</body>
+</html>

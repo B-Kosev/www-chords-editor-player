@@ -50,7 +50,7 @@ const registerValidation = {
 				}
 
 				if (response.success == true) {
-					window.location.replace("../resources/index.html");
+					window.location.replace("./index.html");
 				}
 			})
 			.catch(() => {
@@ -124,4 +124,22 @@ const registerValidation = {
 
 		confirmPassword.setAttribute("style", "border: solid red");
 	},
+
+	checkLoginStatus: () => {
+		return fetch("../php/web/UserController.php").then((response) => {
+			if (response.ok) {
+				return response.json();
+			} else {
+				throw new Error();
+			}
+		});
+	},
 };
+
+registerValidation.checkLoginStatus().then((loginStatus) => {
+	if (loginStatus.logged) {
+		window.location.replace("./index.html");
+	} else {
+		console.log("not logged");
+	}
+});

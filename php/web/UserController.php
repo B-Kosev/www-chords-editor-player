@@ -137,8 +137,7 @@
             if(!$success){
                 echo json_encode($errors, JSON_UNESCAPED_UNICODE);
             }else{
-
-                // $_SESSION['user_id'] = 26;
+                // $_SESSION['id'] = UserService::getUserByUsername().getId();
                 $_SESSION['username'] = $username;
 
                 echo json_encode(["success" => true]);

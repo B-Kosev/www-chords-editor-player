@@ -17,15 +17,15 @@ Class User{
         return this->id;
     }
 
-    public function getUsername(): int {
+    public function getUsername(): string {
         return this->username;
     }
 
-    public function getEmail(): int {
+    public function getEmail(): string {
         return this->email;
     }
 
-    public function getPassword(): int {
+    public function getPassword(): string {
         return this->password;
     }
 
