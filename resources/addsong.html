@@ -4,7 +4,6 @@
 		<title>Chord Editor</title>
 		<link href="./static/css/index.css" rel="stylesheet" />
 		<link href="./static/css/auth.css" rel="stylesheet" />
-		<script src="./static/js/loginStatus.js"></script>
 	</head>
 	<body>
 		<header class="header">
@@ -37,10 +36,12 @@
 				<span class="errorMsg" id="year-err"></span>
 				<textarea class="field" placeholder="Song lyrics" name="text" id="text" required></textarea>
 				<span class="errorMsg" id="text-err"></span>
-				<input class="btn" type="submit" value="Add Song" name="add-song" />
+				<input class="btn" type="submit" value="Add Song" name="add-song" id="submit-btn" />
 			</form>
 		</section>
 
 		<footer></footer>
+		<script src="./static/js/loginStatus.js"></script>
+		<script src="./static/js/addSong.js"></script>
 	</body>
 </html>

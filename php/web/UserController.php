@@ -143,6 +143,15 @@
                 echo json_encode(["success" => true]);
             }
         }
+
+        //TO DO: checking visibility of pages 
+        if(isset($requestBody['page'])){
+            $page = $requestBody['page'];
+            if($page == "login.html" && $_SESSION['username']){
+                header("Location: ../../resources/index.html");
+                echo json_encode(["success" => true]);
+            }
+        }
         break;
     }
     case 'DELETE': {
