@@ -39,14 +39,18 @@ const fillList = (songs) => {
 
 		document.querySelector(".cards").appendChild(card);
 	});
+
+	addCardListeners();
 };
 
-document.querySelectorAll(".card").forEach((element) => {
-	element.addEventListener("click", function (e) {
-		var title = element.querySelector(".song-title").innerHTML;
-		localStorage.setItem("song-title", title);
+const addCardListeners = () => {
+	document.querySelectorAll(".card").forEach((element) => {
+		element.addEventListener("click", function (e) {
+			var title = element.querySelector(".song-title").innerHTML;
+			localStorage.setItem("song-title", title);
+		});
 	});
-});
+};
 
 // <section class="card">
 // 	<a href="song.html">
