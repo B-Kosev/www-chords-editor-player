@@ -92,19 +92,24 @@
                 $errors += ["success" => $success];
                 echo json_encode($errors, JSON_UNESCAPED_UNICODE);
             }else{
-                $conn = new mysqli("localhost","root","","chordsplayereditor");
-        
-                if($conn->connect_error){
-                    die("Connection Failed : ".$conn->connect_error);
-                }else{
-                    $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
-                    $stmt->bind_param("sss", $username, $hashedPassword, $email);
-                    $stmt->execute();
-                    $stmt->close();
-                    $conn->close();
+                // $conn = new mysqli("localhost","root","","chordsplayereditor");
+                $conn = (new Database())->getConnection();
+
+                // if($conn->connect_error){
+                //     die("Connection Failed : ".$conn->connect_error);
+                // }else{
+                    // $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
+                    // $stmt->bind_param("sss", $username, $hashedPassword, $email);
+                    // $stmt->execute();
+                $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
+                $stmt->bindParam(':username', $username);
+                $stmt->bindParam(':password', $hashedPassword);
+                $stmt->bindParam(':email', $email);
+                $stmt->execute();
+                    // $stmt->close();
+                    // $conn->close();
 
                     echo json_encode(["success" => $success]);
-                }
             }
         }
         if(isset($requestBody['login'])){
@@ -140,6 +145,15 @@
                 // $_SESSION['id'] = UserService::getUserByUsername().getId();
                 $_SESSION['username'] = $username;
 
+                echo json_encode(["success" => true]);
+            }
+        }
+
+        //TO DO: checking visibility of pages 
+        if(isset($requestBody['page'])){
+            $page = $requestBody['page'];
+            if($page == "login.html" && $_SESSION['username']){
+                header("Location: ../../resources/index.html");
                 echo json_encode(["success" => true]);
             }
         }
