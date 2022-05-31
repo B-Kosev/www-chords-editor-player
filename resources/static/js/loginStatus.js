@@ -6,8 +6,8 @@ const statusValidation = {
 	removeButtons: () => {
 		const loginButton = document.getElementById("login-button");
 		const registerButton = document.getElementById("register-button");
-		const greeting = document.getElementById("greeting");
-		const logoutButton = document.getElementById("logout-button");
+		const greeting = document.getElementById("greeting-parent");
+		const logoutButton = document.getElementById("logout-button-parent");
 
 		loginButton.setAttribute("style", "display: none");
 		registerButton.setAttribute("style", "display: none");
