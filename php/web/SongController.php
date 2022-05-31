@@ -77,7 +77,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         // $textRegex ='/([^\[\]])*\[([A-G]|[ACDFG][\#])([m])?\]([^\[\]])*/s';
         // $textRegex = '/([A-Za-z\s,!;\.0-9]*\[([A-G]|[ACDFG][\#])[m]?\][A-Za-z\s,!;\.0-9]*)*/';
-        $textRegex = '/\[([^A-G](.)*|[^ACDFG][\#](.)*|[A-G][^\#][^m]*(.)*)\]/';
+        $textRegex = '/\[([^A-G](.)*|[^ACDFG][\#](.)*|[A-G][^\#][^m]*(.)*)\]g/';
         if(preg_match($textRegex,$text) == 1){
             $success = false;
             $errors += ["text" => "Lyrics are not valid."];
