@@ -10,6 +10,11 @@ const fetchChord = () => {
 	fetch("../php/web/ChordController.php?id=" + chord)
 		.then((response) => response.json())
 		.then(displayChord);
+
+	// Load proper audio files
+	document.querySelector(".audio.inv1").src = "./static/audio/" + chord + "1.mp3";
+	document.querySelector(".audio.inv2").src = "./static/audio/" + chord + "2.mp3";
+	document.querySelector(".audio.inv3").src = "./static/audio/" + chord + "3.mp3";
 };
 
 // Click handlers for making the buttons active
