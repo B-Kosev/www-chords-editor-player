@@ -21,6 +21,10 @@ CREATE TABLE IF NOT EXISTS `songs` (
   `author` varchar(50) NOT NULL,
   `key` varchar(3) NOT NULL,
   `year` int(10) NOT NULL,
+  `duration` varchar(10) NOT NULL,
+  `tempo` int(4) NOT NULL,
+  `signature` varchar(5) NOT NULL,
+  `url` varchar(250) NOT NULL,
   `text` varchar(2500) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
@@ -118,8 +122,9 @@ INSERT INTO `chords` (`id`, `name`, `first`, `third`, `fifth`, `inversion`) VALU
 ('bm', 'B Minor', 'd2', 'fs2', 'b2', 2),
 ('bm', 'B Minor', 'fs2', 'b2', 'd3', 3);
 
-INSERT INTO `songs` (`title`, `author`, `key`, `year`, `text`) VALUES
-('Amazing Grace', 'John Newton', 'E', '1772',
+INSERT INTO `songs` (`title`, `author`, `key`, `year`, `duration`, `tempo`, `signature`, `url`, `text`) VALUES
+('Amazing Grace', 'John Newton', 'E', '1772', '5:25', 104, '4/4',
+'https://www.youtube.com/embed/rkW2AgGaGXI',
 'Verse 1
 Am[E]azing Grace how sw[A]eet the s[E]ound,
 That s[C#m]aved a wretch l[B]ike me!

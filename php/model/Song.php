@@ -5,15 +5,24 @@ class Song implements \JsonSerializable {
     private $title; 
     private $author;
     private $key; 
-    private $year; 
+    private $year;
+    private $duration;
+    private $tempo;
+    private $signature;
+    private $url; 
     private $text;
 
-    public function __construct(string $id, string $title, string $author, string $key, string $year, string $text){
+    public function __construct(string $id, string $title, string $author, string $key, string $year, string $duration, 
+    int $tempo, string $signature, string $url, string $text) {
         $this->id = $id;
         $this->title = $title;
         $this->author = $author;
         $this->key = $key;
         $this->year = $year;
+        $this->duration = $duration;
+        $this->tempo = $tempo;
+        $this->signature = $signature;
+        $this->url = $url;
         $this->text = $text;
     }
 
@@ -47,6 +56,10 @@ class Song implements \JsonSerializable {
             $assocSong['author'], 
             $assocSong['key'],
             $assocSong['year'], 
+            $assocSong['duration'], 
+            $assocSong['tempo'], 
+            $assocSong['signature'], 
+            $assocSong['url'], 
             $assocSong['text']);
     }
 

@@ -20,6 +20,23 @@
 	margin: 10px 0 10px 0;
 }
 
+.song-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	width: 70vw;
+}
+
+.song-meta-text {
+	padding: 0;
+	/* text-align: center; */
+}
+
+.song-meta-text > h4 {
+	margin: 10px 0;
+}
+
 .song-data {
 	display: block;
 	width: 75%;
@@ -45,7 +62,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	margin-left: 10%;
+	/* margin-left: 10%; */
 	padding: 0;
 }
 
@@ -103,4 +120,5 @@ pre,
 pre > span {
 	font-family: monospace;
 	font-size: 1.1rem;
+	z-index: -1;
 }

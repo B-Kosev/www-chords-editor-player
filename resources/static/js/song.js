@@ -49,6 +49,10 @@ const fillData = (song) => {
 	document.querySelector(".song-author").innerHTML = "Author: " + song.author;
 	document.querySelector(".song-key").innerHTML = "Key: " + song.key;
 	document.querySelector(".song-year").innerHTML = "Year: " + song.year;
+	document.querySelector(".song-duration").innerHTML = "Duration: " + song.duration;
+	document.querySelector(".song-tempo").innerHTML = "Tempo: " + song.tempo + " BPM";
+	document.querySelector(".song-signature").innerHTML = "Time signature: " + song.signature;
+	document.querySelector(".video").src = song.url;
 	document.querySelector(".song-data").innerHTML = song.text;
 
 	parseText();
