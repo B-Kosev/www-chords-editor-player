@@ -12,6 +12,9 @@ const addNewSong = {
 			key: form.key.value,
 			year: form.year.value,
 			duration: form.duration.value,
+			tempo: form.tempo.value,
+			signature: form.signature.value,
+			ytlink: form.ytlink.value,
 			text: form.text.value,
 		};
 
@@ -47,7 +50,19 @@ const addNewSong = {
 				}
 
 				if (response.duration) {
-					addNewSong.displaDurationErrorMessage(response.duration);
+					addNewSong.displayDurationErrorMessage(response.duration);
+				}
+
+				if (response.tempo) {
+					addNewSong.displayTempoErrorMessage(response.tempo);
+				}
+
+				if (response.signature) {
+					addNewSong.displaySignatureErrorMessage(response.signature);
+				}
+
+				if (response.ytlink) {
+					addNewSong.displayYTlinkErrorMessage(response.ytlink);
 				}
 
 				if (response.text) {
@@ -69,6 +84,9 @@ const addNewSong = {
 		const key = document.getElementById("key");
 		const year = document.getElementById("year");
 		const duration = document.getElementById("duration");
+		const tempo = document.getElementById("tempo");
+		const signature = document.getElementById("signature");
+		const ytlink = document.getElementById("ytlink");
 		const text = document.getElementById("text");
 
 		const titleErr = document.getElementById("title-err");
@@ -76,6 +94,9 @@ const addNewSong = {
 		const keyErr = document.getElementById("key-err");
 		const yearErr = document.getElementById("year-err");
 		const durationErr = document.getElementById("duration-err");
+		const tempoErr = document.getElementById("tempo-err");
+		const signatureErr = document.getElementById("signature-err");
+		const ytlinkErr = document.getElementById("ytlink-err");
 		const textErr = document.getElementById("text-err");
 
 		titleErr.innerHTML = "";
@@ -83,6 +104,9 @@ const addNewSong = {
 		keyErr.innerHTML = "";
 		yearErr.innerHTML = "";
 		durationErr.innerHTML = "";
+		tempoErr.innerHTML = "";
+		signatureErr.innerHTML = "";
+		ytlinkErr.innerHTML = "";
 		textErr.innerHTML = "";
 
 		titleErr.setAttribute("style", "display: none");
@@ -90,6 +114,9 @@ const addNewSong = {
 		keyErr.setAttribute("style", "display: none");
 		yearErr.setAttribute("style", "display: none");
 		durationErr.setAttribute("style", "display: none");
+		tempoErr.setAttribute("style", "display: none");
+		signatureErr.setAttribute("style", "display: none");
+		ytlinkErr.setAttribute("style", "display: none");
 		textErr.setAttribute("style", "display: none");
 
 		title.setAttribute("style", "border: groove #e4e9f7");
@@ -97,6 +124,9 @@ const addNewSong = {
 		key.setAttribute("style", "border: groove #e4e9f7");
 		year.setAttribute("style", "border: groove #e4e9f7");
 		duration.setAttribute("style", "border: groove #e4e9f7");
+		tempo.setAttribute("style", "border: groove #e4e9f7");
+		signature.setAttribute("style", "border: groove #e4e9f7");
+		ytlink.setAttribute("style", "border: groove #e4e9f7");
 		text.setAttribute("style", "border: groove #e4e9f7");
 	},
 
@@ -140,7 +170,7 @@ const addNewSong = {
 		year.setAttribute("style", "border: solid red");
 	},
 
-	displaDurationErrorMessage: (errorMessage) => {
+	displayDurationErrorMessage: (errorMessage) => {
 		const duration = document.getElementById("duration");
 		const durationErr = document.getElementById("duration-err");
 
@@ -148,6 +178,36 @@ const addNewSong = {
 		durationErr.setAttribute("style", "display: block");
 
 		duration.setAttribute("style", "border: solid red");
+	},
+
+	displayTempoErrorMessage: (errorMessage) => {
+		const tempo = document.getElementById("tempo");
+		const tempoErr = document.getElementById("tempo-err");
+
+		tempoErr.innerHTML = errorMessage;
+		tempoErr.setAttribute("style", "display: block");
+
+		tempo.setAttribute("style", "border: solid red");
+	},
+
+	displaySignatureErrorMessage: (errorMessage) => {
+		const signature = document.getElementById("signature");
+		const signatureErr = document.getElementById("signature-err");
+
+		signature.innerHTML = errorMessage;
+		signatureErr.setAttribute("style", "display: block");
+
+		signature.setAttribute("style", "border: solid red");
+	},
+
+	displayYTlinkErrorMessage: (errorMessage) => {
+		const ytlink = document.getElementById("tempo");
+		const ytlinkErr = document.getElementById("tempo-err");
+
+		ytlinkErr.innerHTML = errorMessage;
+		ytlinkErr.setAttribute("style", "display: block");
+
+		ytlink.setAttribute("style", "border: solid red");
 	},
 
 	displayTextErrorMessage: (errorMessage) => {

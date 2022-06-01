@@ -30,6 +30,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $songKey =  $requestBody['key'];
         $year = intval($requestBody['year']);
         $duration = $requestBody['duration'];
+        $tempo = intval($requestBody['tempo']);
+        $signature = $requestBody['signature'];
+        $ytlink = $requestBody['ytlink'];
         $text = $requestBody['text'];
 
         $success = true;
@@ -75,16 +78,27 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $errors += ["year" => "Invalid year."];
         }
 
+        $keyRegex = '/^[A-G]$|^[ACDFG][\#]$/i';
+        if(!preg_match($keyRegex,$songKey)){
+            $success = false;
+            $errors += ["key" => "Key is not valid."];
+        }
+
         $durationRegex = '/^[0-5][0-9]\:[0-5][0-9]$/';
         if(!preg_match($durationRegex,$duration)){
             $success = false;
             $errors += ["duration" => "Duration should be set in format mm:ss."];
         }
 
-        $keyRegex = '/^[A-G]$|^[ACDFG][\#]$/i';
-        if(!preg_match($keyRegex,$songKey)){
+        if($tempo < 20 || $tempo > 300){
             $success = false;
-            $errors += ["key" => "Key is not valid."];
+            $errors += ["tempo" => "Tempo must be between 20 and 300."];
+        }
+
+        $signatureRegex = '/^[2-4]\/[4]$|^[69]\/8$|^2\/2$|^12\/8$/';
+        if(!preg_match($signatureRegex,$signature)){
+            $success = false;
+            $errors += ["signature" => "Time signature must be one of 2/4, 3/4, 4/4, 2/2, 6/8, 9/8, 12/8."];
         }
 
         // $textRegex ='/([^\[\]])*\[([A-G]|[ACDFG][\#])([m])?\]([^\[\]])*/s';
