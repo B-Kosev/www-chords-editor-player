@@ -13,6 +13,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-top: 130px;
 }
 
 .song-info > * {
@@ -86,15 +87,20 @@
 /* ======== TEXT ======== */
 
 h2 {
-	font-family: "Poppins", sans-serif;
 	color: var(--text-color);
 	font-size: 3rem;
 	font-weight: 500;
 }
 
 h4 {
-	font-family: "Poppins", sans-serif;
+	/* font-family: "Poppins", sans-seri; */
 	font-size: 1.2rem;
 	color: var(--text-color);
 	font-weight: 500;
+}
+
+pre,
+pre > span {
+	font-family: monospace;
+	font-size: 1.1rem;
 }

@@ -27,9 +27,9 @@ img {
 /* ======== TEXT ======== */
 
 h2 {
-	font-family: "Poppins", sans-serif;
+	/* font-family: "Poppins", sans-serif; */
 	color: var(--text-color);
 	font-size: 3rem;
 	font-weight: 500;
-	margin: 40px 0 0 96px;
+	margin: 130px 0 0 96px;
 }

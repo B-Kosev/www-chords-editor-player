@@ -29,6 +29,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $author =  $requestBody['author'];
         $songKey =  $requestBody['key'];
         $year = intval($requestBody['year']);
+        $duration = $requestBody['duration'];
         $text = $requestBody['text'];
 
         $success = true;
@@ -54,6 +55,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $errors += ["year" => "Year field is required."];
         }
 
+        if(empty($duration)){
+            $success = false;
+            $errors += ["duration" => "Duration field is required."];
+        }
+
         if(empty($text)){
             $success = false;
             $errors += ["text" => "Text field is required."];
@@ -67,6 +73,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
         if($year > 2022){
             $success = false;
             $errors += ["year" => "Invalid year."];
+        }
+
+        $durationRegex = '/^[0-5][0-9]\:[0-5][0-9]$/';
+        if(!preg_match($durationRegex,$duration)){
+            $success = false;
+            $errors += ["duration" => "Duration should be set in format mm:ss."];
         }
 
         $keyRegex = '/^[A-G]$|^[ACDFG][\#]$/i';

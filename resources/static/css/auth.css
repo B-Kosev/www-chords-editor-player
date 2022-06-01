@@ -5,9 +5,9 @@
 	justify-content: center;
 	align-items: center;
 	background-color: var(--header-color);
-	margin: 7% 30% 5% 30%;
+	margin: 150px 30% 5% 30%;
 	padding: 2% 0 2% 0;
-	min-width: 280px;
+	/* min-width: 280px; */
 	width: 40%;
 	border-radius: 20px;
 
@@ -77,4 +77,10 @@ label {
 
 #text {
 	height: 150px;
+}
+
+textarea {
+	width: 50%;
+	min-width: 170px;
+	max-width: 500px;
 }

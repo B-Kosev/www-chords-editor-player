@@ -11,6 +11,7 @@ const addNewSong = {
 			author: form.author.value,
 			key: form.key.value,
 			year: form.year.value,
+			duration: form.duration.value,
 			text: form.text.value,
 		};
 
@@ -45,6 +46,10 @@ const addNewSong = {
 					addNewSong.displayYearErrorMessage(response.year);
 				}
 
+				if (response.duration) {
+					addNewSong.displaDurationErrorMessage(response.duration);
+				}
+
 				if (response.text) {
 					addNewSong.displayTextErrorMessage(response.text);
 				}
@@ -63,29 +68,35 @@ const addNewSong = {
 		const author = document.getElementById("author");
 		const key = document.getElementById("key");
 		const year = document.getElementById("year");
+		const duration = document.getElementById("duration");
 		const text = document.getElementById("text");
+
 		const titleErr = document.getElementById("title-err");
 		const authorErr = document.getElementById("author-err");
 		const keyErr = document.getElementById("key-err");
 		const yearErr = document.getElementById("year-err");
+		const durationErr = document.getElementById("duration-err");
 		const textErr = document.getElementById("text-err");
 
 		titleErr.innerHTML = "";
 		authorErr.innerHTML = "";
 		keyErr.innerHTML = "";
 		yearErr.innerHTML = "";
+		durationErr.innerHTML = "";
 		textErr.innerHTML = "";
 
 		titleErr.setAttribute("style", "display: none");
 		authorErr.setAttribute("style", "display: none");
 		keyErr.setAttribute("style", "display: none");
 		yearErr.setAttribute("style", "display: none");
+		durationErr.setAttribute("style", "display: none");
 		textErr.setAttribute("style", "display: none");
 
 		title.setAttribute("style", "border: groove #e4e9f7");
 		author.setAttribute("style", "border: groove #e4e9f7");
 		key.setAttribute("style", "border: groove #e4e9f7");
 		year.setAttribute("style", "border: groove #e4e9f7");
+		duration.setAttribute("style", "border: groove #e4e9f7");
 		text.setAttribute("style", "border: groove #e4e9f7");
 	},
 
@@ -127,6 +138,16 @@ const addNewSong = {
 		yearErr.setAttribute("style", "display: block");
 
 		year.setAttribute("style", "border: solid red");
+	},
+
+	displaDurationErrorMessage: (errorMessage) => {
+		const duration = document.getElementById("duration");
+		const durationErr = document.getElementById("duration-err");
+
+		durationErr.innerHTML = errorMessage;
+		durationErr.setAttribute("style", "display: block");
+
+		duration.setAttribute("style", "border: solid red");
 	},
 
 	displayTextErrorMessage: (errorMessage) => {
