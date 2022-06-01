@@ -37,6 +37,10 @@
 	margin: 10px 0;
 }
 
+.video {
+	margin: 16px 0;
+}
+
 .song-data {
 	display: block;
 	width: 75%;
@@ -107,6 +111,7 @@ h2 {
 	color: var(--text-color);
 	font-size: 3rem;
 	font-weight: 500;
+	margin-top: 0;
 }
 
 h4 {
