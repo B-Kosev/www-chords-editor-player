@@ -44,7 +44,7 @@ const loginValidation = {
 				}
 
 				if (response.success == true) {
-					window.location.replace("./index.html");
+					window.location.replace("./index.php");
 				}
 			})
 			.catch(() => {

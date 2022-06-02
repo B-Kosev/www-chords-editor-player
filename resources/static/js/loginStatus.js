@@ -61,13 +61,13 @@ statusValidation.checkLoginStatus().then((loginStatus) => {
 	if (loginStatus.logged) {
 		statusValidation.removeButtons();
 		document.getElementById("greeting").innerHTML = "Hi, " + loginStatus.session.username;
-		if (fileName == "login.html" || fileName == "register.html") {
-			window.location.replace("./index.html");
+		if (fileName == "login.php" || fileName == "register.php") {
+			window.location.replace("./index.php");
 		}
 	} else {
-		if (fileName == "addsong.html") {
-			window.location.replace("./index.html");
-		} else if (fileName == "songlist.html") {
+		if (fileName == "addsong.php") {
+			window.location.replace("./index.php");
+		} else if (fileName == "songlist.php") {
 			document.getElementById("new-song-btn").setAttribute("style", "display: none");
 		}
 		console.log("not logged");

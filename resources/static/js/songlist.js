@@ -6,13 +6,18 @@ window.onload = function () {
 };
 
 const fillList = (songs) => {
+	const params = new URL(document.location).searchParams;
+	const showChords = params.get("chords");
+
 	songs.forEach((song) => {
 		var card = document.createElement("section");
 		card.setAttribute("class", "card");
 
 		var a = document.createElement("a");
 		a.setAttribute("class", "song-link");
-		a.setAttribute("href", "song.html");
+
+		// TODO: Handle 'showChords' parameter
+		a.setAttribute("href", "song.php?title=" + song.title + "&chords=" + showChords);
 
 		var title = document.createElement("h3");
 		title.setAttribute("class", "song-title");
@@ -40,17 +45,17 @@ const fillList = (songs) => {
 		document.querySelector(".cards").appendChild(card);
 	});
 
-	addCardListeners();
+	// addCardListeners();
 };
 
-const addCardListeners = () => {
-	document.querySelectorAll(".card").forEach((element) => {
-		element.addEventListener("click", function (e) {
-			var title = element.querySelector(".song-title").innerHTML;
-			localStorage.setItem("song-title", title);
-		});
-	});
-};
+// const addCardListeners = () => {
+// 	document.querySelectorAll(".card").forEach((element) => {
+// 		element.addEventListener("click", function (e) {
+// 			var title = element.querySelector(".song-title").innerHTML;
+// 			localStorage.setItem("song-title", title);
+// 		});
+// 	});
+// };
 
 // <section class="card">
 // 	<a href="song.html">

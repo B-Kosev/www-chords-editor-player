@@ -32,6 +32,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $duration = $requestBody['duration'];
         $tempo = intval($requestBody['tempo']);
         $signature = $requestBody['signature'];
+        // TODO: Parse the link according to the explanation given
         $ytlink = $requestBody['ytlink'];
         $text = $requestBody['text'];
 

@@ -2,30 +2,15 @@
 <html>
 	<head>
 		<title>Chord Editor</title>
-		<link href="./static/css/index.css" rel="stylesheet" />
+		<?php include('./components/head.php')?>
 		<link href="./static/css/piano.css" rel="stylesheet" />
 	</head>
 	<body>
-		<header class="header">
-			<a href="index.html" class="title">12 Keys</a>
-			<nav>
-				<ul class="nav">
-					<li><a href="instruments.html">Chords</a></li>
-					<li><a href="songlist.html">Lyrics</a></li>
-				</ul>
-			</nav>
-			<ul class="auth">
-				<li><a href="login.html" id="login-button">Sign in</a></li>
-				<li><a href="register.html" id="register-button">Sign up</a></li>
-				<li id="greeting-parent"><span id="greeting"></span></li>
-				<li id="logout-button-parent"><a id="logout-button">Log out</a></li>
-			</ul>
-		</header>
+		<?php include('./components/navigation.php')?>
 
 		<h2>Piano Chord Chart</h2>
 
 		<figure class="keys">
-			<!-- <figcaption class="chord-label">Chords</figcaption> -->
 			<ul>
 				<li><button id="c" class="btn key selected" type="button">C</button></li>
 				<li><button id="cs" class="btn key" type="button">C#</button></li>
@@ -43,7 +28,6 @@
 		</figure>
 
 		<figure class="min-maj">
-			<!-- <figcaption>Chord type</figcaption> -->
 			<ul>
 				<li><button id="" class="btn type selected" type="button">Major</button></li>
 				<li><button id="m" class="btn type" type="button">Minor</button></li>

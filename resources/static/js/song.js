@@ -1,5 +1,7 @@
 window.onload = function () {
-	var title = localStorage.getItem("song-title");
+	// var title = localStorage.getItem("song-title");
+	const params = new URL(document.location).searchParams;
+	const title = params.get("title");
 
 	initKeysMap();
 
@@ -101,6 +103,8 @@ const transposeChord = (originalKey, destinationKey) => {
 
 const manageChords = (event) => {
 	event.preventDefault();
+
+	// TODO: Add support for 'chords' query parameter
 
 	const checkbox = event.target;
 	var chords = document.getElementsByClassName("chord");

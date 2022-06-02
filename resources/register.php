@@ -2,26 +2,12 @@
 <html>
 	<head>
 		<title>Chord Editor</title>
-		<link href="./static/css/index.css" rel="stylesheet" />
+		<?php include('./components/head.php')?>
 		<link href="./static/css/auth.css" rel="stylesheet" />
 		<!-- <script src="./static/js/loginStatus.js"></script> -->
 	</head>
 	<body>
-		<header class="header">
-			<a href="index.html" class="title">12 Keys</a>
-			<nav>
-				<ul class="nav">
-					<li><a href="instruments.html">Chords</a></li>
-					<li><a href="songlist.html">Lyrics</a></li>
-				</ul>
-			</nav>
-			<ul class="auth">
-				<li><a href="login.html" id="login-button">Sign in</a></li>
-				<li><a href="register.html" id="register-button">Sign up</a></li>
-				<li id="greeting-parent"><span id="greeting"></span></li>
-				<li id="logout-button-parent"><a id="logout-button">Log out</a></li>
-			</ul>
-		</header>
+		<?php include('./components/navigation.php')?>
 
 		<section>
 			<!-- action="../php/web/UserController.php" method="post"  -->
@@ -46,7 +32,6 @@
 			</form>
 		</section>
 
-		<footer></footer>
 		<script src="./static/js/loginStatus.js"></script>
 		<script src="./static/js/register.js"></script>
 	</body>
