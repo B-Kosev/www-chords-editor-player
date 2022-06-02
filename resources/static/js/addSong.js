@@ -194,15 +194,15 @@ const addNewSong = {
 		const signature = document.getElementById("signature");
 		const signatureErr = document.getElementById("signature-err");
 
-		signature.innerHTML = errorMessage;
+		signatureErr.innerHTML = errorMessage;
 		signatureErr.setAttribute("style", "display: block");
 
 		signature.setAttribute("style", "border: solid red");
 	},
 
 	displayYTlinkErrorMessage: (errorMessage) => {
-		const ytlink = document.getElementById("tempo");
-		const ytlinkErr = document.getElementById("tempo-err");
+		const ytlink = document.getElementById("ytlink");
+		const ytlinkErr = document.getElementById("ytlink-err");
 
 		ytlinkErr.innerHTML = errorMessage;
 		ytlinkErr.setAttribute("style", "display: block");

@@ -84,7 +84,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $errors += ["key" => "Key is not valid."];
         }
 
-        $durationRegex = '/^[0-5][0-9]\:[0-5][0-9]$/';
+        $durationRegex = '/^[0-5]?[0-9]\:[0-5][0-9]$/';
         if(!preg_match($durationRegex,$duration)){
             $success = false;
             $errors += ["duration" => "Duration should be set in format mm:ss."];
@@ -101,6 +101,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $errors += ["signature" => "Time signature must be one of 2/4, 3/4, 4/4, 2/2, 6/8, 9/8, 12/8."];
         }
 
+        // $ytlinkRegex='/^(http:\/\/)?youtube.com\/watch(.)*/';
+        // if(!preg_match($ytlinkRegex,$ytlink)){
+        //     $success = false;
+        //     $errors += ["ytlink" => "Should be provided valid link to a YouTube video."];
+        // }
+
         // $textRegex ='/([^\[\]])*\[([A-G]|[ACDFG][\#])([m])?\]([^\[\]])*/s';
         // $textRegex = '/([A-Za-z\s,!;\.0-9]*\[([A-G]|[ACDFG][\#])[m]?\][A-Za-z\s,!;\.0-9]*)*/';
         $textRegex = '/\[([^A-G](.)*|[^ACDFG][\#](.)*|[A-G][^\#][^m]*(.)*)\]g/';
@@ -115,12 +121,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }else{
             $conn = (new Database())->getConnection();
             // cast year to int
-            $stmt = $conn->prepare("INSERT INTO `songs` (`title`, `author`, `key`, `year`, `text`) VALUES (:title, :author, :songKey, :year, :text)");
-            // $stmt = $conn->prepare("INSERT INTO 'songs' ('title', 'author', 'key', 'year', 'text') VALUES (:title, :author, :songKey, :year, :text)");
+            // $stmt = $conn->prepare("INSERT INTO `songs` (`title`, `author`, `key`, `year`, `duration`, `tempo`, `url`, `text`) VALUES (:title, :author, :songKey, :year, :duration, :tempo, :ytlink, :text)");
+             $stmt = $conn->prepare("INSERT INTO `songs` (`title`, `author`, `key`, `year`, `duration`, `tempo`, `signature`, `url`, `text`) VALUES (:title, :author, :songKey, :year, :duration, :tempo, :signature, :ytlink, :text)");
             $stmt->bindParam(':title', $title);
             $stmt->bindParam(':author', $author);
             $stmt->bindParam(':songKey', $songKey);
             $stmt->bindParam(':year', $year);
+            $stmt->bindParam(':duration', $duration);
+            $stmt->bindParam(':tempo', $tempo);
+            $stmt->bindParam(':signature', $signature);
+            $stmt->bindParam(':ytlink', $ytlink);
             $stmt->bindParam(':text', $text);
             $stmt->execute();
             echo json_encode(["success" => $success]);

@@ -98,3 +98,25 @@ const transposeChord = (originalKey, destinationKey) => {
 		element.innerHTML = minor ? newKey + "m" : newKey;
 	});
 };
+
+const manageChords = (event) => {
+	event.preventDefault();
+
+	const checkbox = event.target;
+	var chords = document.getElementsByClassName("chord");
+	var transpose = document.getElementById("keys");
+	if (checkbox.checked) {
+		for (var i = 0; i < chords.length; i++) {
+			chords[i].setAttribute("style", "opacity:1");
+		}
+		transpose.setAttribute("style", "display: flex");
+	} else {
+		for (var i = 0; i < chords.length; i++) {
+			chords[i].setAttribute("style", "opacity:0");
+		}
+		transpose.setAttribute("style", "display: none");
+		document.getElementById("song-data").setAttribute("style", "margin-top: 30px");
+	}
+};
+
+document.getElementById("checkbox").addEventListener("change", manageChords);
