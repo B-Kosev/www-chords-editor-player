@@ -22,6 +22,7 @@
 .keys ul,
 .min-maj ul {
 	padding: 0;
+	margin: 5px 0px;
 }
 
 .keys li,
@@ -143,7 +144,7 @@ h2 {
 }
 
 .active {
-	background-color: var(--primary-color);
+	background-color: var(--toggle-color);
 }
 
 audio {
