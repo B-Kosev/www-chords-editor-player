@@ -54,6 +54,10 @@
 				<li><button id="b" class="btn key" type="button">B</button></li>
 			</ul>
 
+			<ul class="song-chords" id="song-chords">
+				<h4 class="song-chords-title">Learn chords from the song:</h4>
+			</ul>
+
 			<pre class="song-data" id="song-data"></pre>
 		</section>
 

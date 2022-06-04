@@ -12,7 +12,7 @@
 
 		<section class="cards">
 			<section class="card">
-				<a href="piano.php">
+				<a href="piano.php?chordId=c&chordType=maj">
 					<figure class="fig">
 						<img src="./static/images/piano.jpg" />
 						<figcaption>Piano</figcaption>

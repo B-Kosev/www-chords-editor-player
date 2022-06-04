@@ -29,8 +29,8 @@
 
 		<figure class="min-maj">
 			<ul>
-				<li><button id="" class="btn type selected" type="button">Major</button></li>
-				<li><button id="m" class="btn type" type="button">Minor</button></li>
+				<li><button id="maj" class="btn type selected" type="button">Major</button></li>
+				<li><button id="min" class="btn type" type="button">Minor</button></li>
 			</ul>
 		</figure>
 

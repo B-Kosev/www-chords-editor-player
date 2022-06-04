@@ -2,6 +2,7 @@ window.onload = function () {
 	// var title = localStorage.getItem("song-title");
 	const params = new URL(document.location).searchParams;
 	const title = params.get("title");
+	const chords = params.get("chords");
 
 	initKeysMap();
 
@@ -23,6 +24,11 @@ window.onload = function () {
 			transposeChord(originalKey, destinationKey);
 		});
 	});
+
+	if (chords == "false") {
+		document.getElementById("checkbox").checked = false;
+		manageChords();
+	}
 };
 
 const keysMap = new Map();
@@ -71,6 +77,16 @@ const fillData = (song) => {
 
 const parseText = () => {
 	var songData = document.querySelector(".song-data");
+	chordsInSong = songData.innerHTML.match(/\[([^\]]+)\]/g);
+	const chordsSet = new Set(chordsInSong);
+	chordsSet.forEach((chord) => {
+		document.getElementById("song-chords").appendChild(document.createElement("li"));
+		var lastChild = document.getElementById("song-chords").lastChild;
+		lastChild.innerHTML = '<a class="song-chords-link">' + chord.slice(1, -1) + "</a>";
+	});
+	// document.getElementsByClassName("song-chords-link").forEach((element) => {
+	// 	element.setAttribute("href", "piano.php");
+	// });
 	songData.innerHTML = songData.innerHTML.replace(/\[(.*?)\]/g, '<span class="chord">$1</span>');
 };
 
@@ -79,7 +95,7 @@ const transposeChord = (originalKey, destinationKey) => {
 
 	document.querySelector(".song-key").innerHTML = "Key: " + destinationKey;
 
-	document.querySelectorAll(".chord").forEach((element) => {
+	document.querySelectorAll(".chord, .song-chords-link").forEach((element) => {
 		var currentKey = element.innerHTML;
 		var minor = false;
 
@@ -101,24 +117,30 @@ const transposeChord = (originalKey, destinationKey) => {
 	});
 };
 
-const manageChords = (event) => {
-	event.preventDefault();
+const manageChords = () => {
+	var checkbox = document.getElementById("checkbox");
 
-	// TODO: Add support for 'chords' query parameter
+	const params = new URL(document.location).searchParams;
+	const title = params.get("title");
 
-	const checkbox = event.target;
+	//idk what to put in the first 2 parameters
+	window.history.pushState("", "", "song.php?title=" + title + "&chords=" + checkbox.checked);
+
 	var chords = document.getElementsByClassName("chord");
 	var transpose = document.getElementById("keys");
+	var learn = document.getElementById("song-chords");
 	if (checkbox.checked) {
 		for (var i = 0; i < chords.length; i++) {
 			chords[i].setAttribute("style", "opacity:1");
 		}
 		transpose.setAttribute("style", "display: flex");
+		learn.setAttribute("style", "display: flex");
 	} else {
 		for (var i = 0; i < chords.length; i++) {
 			chords[i].setAttribute("style", "opacity:0");
 		}
 		transpose.setAttribute("style", "display: none");
+		learn.setAttribute("style", "display: none");
 		document.getElementById("song-data").setAttribute("style", "margin-top: 30px");
 	}
 };
