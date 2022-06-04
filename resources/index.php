@@ -38,5 +38,6 @@
 		</section>
 
 		<script src="./static/js/loginStatus.js"></script>
+		<script src="./static/js/navigation.js"></script>
 	</body>
 </html>

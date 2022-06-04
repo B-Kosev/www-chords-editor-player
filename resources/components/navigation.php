@@ -13,4 +13,5 @@
         <li id="greeting-parent"><span id="greeting"></span></li>
         <li id="logout-button-parent"><a id="logout-button">Log out</a></li>
     </ul>
+    <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
 </header>

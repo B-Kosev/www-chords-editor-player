@@ -25,6 +25,7 @@
 	font-size: 3.5rem;
 	text-transform: uppercase;
 	color: var(--primary-color);
+	text-align: center;
 }
 
 .nav,
@@ -34,7 +35,11 @@
 	flex-wrap: wrap;
 	list-style: none;
 	font-size: 1.2rem;
-	background-color: var(--header-color);
+	/* background-color: var(--header-color); */
+}
+
+.auth {
+	width: 40%;
 }
 
 .nav li,
@@ -42,7 +47,7 @@
 	display: inline-block;
 	padding: 1px 20px;
 	text-transform: uppercase;
-	background-color: var(--header-color);
+	/* background-color: var(--header-color); */
 }
 
 /* .auth li {
@@ -53,7 +58,7 @@
 .auth a {
 	display: block;
 	padding: 0.5rem;
-	background-color: var(--header-color);
+	/* background-color: var(--header-color); */
 	color: var(--text-color);
 	border-radius: 6px;
 	transition: background-color, transform 0.5s ease;
@@ -90,4 +95,71 @@
 
 #logout-button:hover {
 	cursor: pointer;
+}
+
+.hamburger {
+	display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+	.header {
+		padding: 0 2%;
+		height: 140px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.hamburger {
+		position: relative;
+		display: inline;
+		width: 55px;
+		height: 55px;
+		font-size: 40px;
+		text-align: center;
+		cursor: pointer;
+		appearance: none;
+		background: none;
+		outline: none;
+		border: none;
+		transition: all ease-in-out 0.2s;
+		z-index: 2;
+	}
+
+	.hamburger.active {
+		transform: rotate(-90deg);
+		transition: all ease-in-out 0.2s;
+	}
+
+	/* == DESIGN #2 FOR NAV == */
+	.nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		transform: translateX(100vw);
+		background-color: #d3d1e7;
+		transition: transform 0.3s ease-in-out;
+		margin: 0;
+	}
+
+	.nav.active {
+		transform: translateX(0);
+	}
+
+	.nav li {
+		width: 50%;
+		margin: 50px 0;
+	}
+
+	.nav li a {
+		padding: 20px 0;
+		/* font-size: 5vh;	 */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }

@@ -17,5 +17,6 @@
 
 		<script src="./static/js/loginStatus.js"></script>
 		<script src="./static/js/songlist.js"></script>
+		<script src="./static/js/navigation.js"></script>
 	</body>
 </html>
