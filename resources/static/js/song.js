@@ -81,12 +81,12 @@ const parseText = () => {
 	const chordsSet = new Set(chordsInSong);
 	chordsSet.forEach((chord) => {
 		document.getElementById("song-chords").appendChild(document.createElement("li"));
-		var lastChild = document.getElementById("song-chords").lastChild;
-		lastChild.innerHTML = '<a class="song-chords-link">' + chord.slice(1, -1) + "</a>";
+		var currentElement = document.getElementById("song-chords").lastChild;
+		let convertedChord = chord.slice(1, -1).toLowerCase();
+		currentElement.innerHTML = '<a class="song-chords-link">' + chord.slice(1, -1) + "</a>";
+		addReference(currentElement.lastChild, convertedChord);
 	});
-	// document.getElementsByClassName("song-chords-link").forEach((element) => {
-	// 	element.setAttribute("href", "piano.php");
-	// });
+
 	songData.innerHTML = songData.innerHTML.replace(/\[(.*?)\]/g, '<span class="chord">$1</span>');
 };
 
@@ -114,6 +114,10 @@ const transposeChord = (originalKey, destinationKey) => {
 
 		// Check if append of 'm' for minor keys is needed
 		element.innerHTML = minor ? newKey + "m" : newKey;
+
+		if (element.tagName == "A") {
+			addReference(element, element.innerHTML);
+		}
 	});
 };
 
@@ -123,7 +127,6 @@ const manageChords = () => {
 	const params = new URL(document.location).searchParams;
 	const title = params.get("title");
 
-	//idk what to put in the first 2 parameters
 	window.history.pushState("", "", "song.php?title=" + title + "&chords=" + checkbox.checked);
 
 	var chords = document.getElementsByClassName("chord");
@@ -143,6 +146,21 @@ const manageChords = () => {
 		learn.setAttribute("style", "display: none");
 		document.getElementById("song-data").setAttribute("style", "margin-top: 30px");
 	}
+};
+
+const addReference = (element, chord) => {
+	chord = chord.toLowerCase();
+	let chordId = chord[0];
+	let chordType;
+	if (chord[1] === "#") {
+		chordId += "s";
+	}
+	if (chord[2] == "m" || chord[1] == "m") {
+		chordType = "min";
+	} else {
+		chordType = "maj";
+	}
+	element.href = "piano.php?chordId=" + chordId + "&chordType=" + chordType;
 };
 
 document.getElementById("checkbox").addEventListener("change", manageChords);
