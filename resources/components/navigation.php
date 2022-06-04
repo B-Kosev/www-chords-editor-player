@@ -8,8 +8,8 @@
         </ul>
     </nav>
     <ul class="auth">
-        <li><a href="login.php" id="login-button">Sign in</a></li>
-        <li><a href="register.php" id="register-button">Sign up</a></li>
+        <li id="login-parent"><a href="login.php" id="login-button">Sign in</a></li>
+        <li id="register-parent"><a href="register.php" id="register-button">Sign up</a></li>
         <li id="greeting-parent"><span id="greeting"></span></li>
         <li id="logout-button-parent"><a id="logout-button">Log out</a></li>
     </ul>

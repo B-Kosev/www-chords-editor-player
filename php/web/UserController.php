@@ -152,8 +152,8 @@
         //TO DO: checking visibility of pages 
         if(isset($requestBody['page'])){
             $page = $requestBody['page'];
-            if($page == "login.html" && $_SESSION['username']){
-                header("Location: ../../resources/index.html");
+            if($page == "login.php" && $_SESSION['username']){
+                header("Location: ../../resources/index.php");
                 echo json_encode(["success" => true]);
             }
         }

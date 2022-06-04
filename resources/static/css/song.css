@@ -205,6 +205,8 @@ input:checked + .slider:before {
 
 .song-chords li {
 	margin: 10px 10px 10px 10px;
+	list-style: none;
+	border-radius: 10px;
 	height: 40px;
 	width: 60px;
 	list-style: none;
@@ -216,7 +218,7 @@ input:checked + .slider:before {
 .song-chords-link {
 	color: var(--header-color);
 	padding: 10px 5px 0 0;
-	margin: 10px 0 0 15px;
+	margin: 30px 0 0 15px;
 	font-size: 1.1rem;
 	font-weight: bold;
 }

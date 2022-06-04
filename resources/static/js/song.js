@@ -88,6 +88,12 @@ const parseText = () => {
 	});
 
 	songData.innerHTML = songData.innerHTML.replace(/\[(.*?)\]/g, '<span class="chord">$1</span>');
+	if (!checkbox.checked) {
+		let chords = document.getElementsByClassName("chord");
+		for (let i = 0; i < chords.length; i++) {
+			chords[i].setAttribute("style", "opacity:0");
+		}
+	}
 };
 
 const transposeChord = (originalKey, destinationKey) => {

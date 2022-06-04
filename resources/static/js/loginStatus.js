@@ -6,7 +6,11 @@ const statusValidation = {
 		const registerButton = document.getElementById("register-button");
 		const greeting = document.getElementById("greeting-parent");
 		const logoutButton = document.getElementById("logout-button-parent");
+		const loginParent = document.getElementById("login-parent");
+		const registerParent = document.getElementById("register-parent");
 
+		loginParent.setAttribute("style", "display: none");
+		registerParent.setAttribute("style", "display: none");
 		loginButton.setAttribute("style", "display: none");
 		registerButton.setAttribute("style", "display: none");
 
