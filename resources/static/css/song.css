@@ -204,21 +204,24 @@ input:checked + .slider:before {
 }
 
 .song-chords li {
-	margin: 10px 10px 10px 10px;
+	margin: 15px 10px 10px 10px;
+	text-align: center;
 	list-style: none;
-	border-radius: 10px;
-	height: 40px;
+	height: 37px;
 	width: 60px;
 	list-style: none;
 	cursor: pointer;
 	background-color: var(--toggle-color);
-	border-radius: 10px;
+	border: 1px solid var(--toggle-color);
+	border-radius: 6px;
+	padding-top: 5px;
+
+	box-shadow: rgb(0 0 0 / 10%) 0 2px 4px 0;
 }
 
 .song-chords-link {
-	color: var(--header-color);
-	padding: 10px 5px 0 0;
-	margin: 30px 0 0 15px;
+	color: white;
+	width: 100%;
 	font-size: 1.1rem;
 	font-weight: bold;
 }

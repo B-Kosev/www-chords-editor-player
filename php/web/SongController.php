@@ -108,9 +108,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //     $errors += ["ytlink" => "Should be provided valid link to a YouTube video."];
         // }
 
-        // $textRegex ='/([^\[\]])*\[([A-G]|[ACDFG][\#])([m])?\]([^\[\]])*/s';
+        $textRegex ='/\[([^A-G]|[^ACDFG][\#]|[A-G][^\#\]][^m]*)\]/';
         // $textRegex = '/([A-Za-z\s,!;\.0-9]*\[([A-G]|[ACDFG][\#])[m]?\][A-Za-z\s,!;\.0-9]*)*/';
-        $textRegex = '/\[([^A-G](.)*|[^ACDFG][\#](.)*|[A-G][^\#][^m]*(.)*)\]g/';
+        // $textRegex = '/\[([^A-G](.)*|[^ACDFG][\#](.)*|[A-G][^\#][^m]*(.)*)\]/';
         if(preg_match($textRegex,$text) == 1){
             $success = false;
             $errors += ["text" => "Lyrics are not valid."];
