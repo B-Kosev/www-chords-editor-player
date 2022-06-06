@@ -102,11 +102,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $errors += ["signature" => "Time signature must be one of 2/4, 3/4, 4/4, 2/2, 6/8, 9/8, 12/8."];
         }
 
-        // $ytlinkRegex='/^(http:\/\/)?youtube.com\/watch(.)*/';
-        // if(!preg_match($ytlinkRegex,$ytlink)){
-        //     $success = false;
-        //     $errors += ["ytlink" => "Should be provided valid link to a YouTube video."];
-        // }
+        $ytlinkRegex='/^(https:\/\/www\.)?youtube.com\/watch\?v=/';
+        if(!preg_match($ytlinkRegex,$ytlink)){
+            $success = false;
+            $errors += ["ytlink" => "Should be provided valid link to a YouTube video."];
+        }
+
+        $ytlink = str_replace("watch?v=","embed/",$ytlink);
 
         $textRegex ='/\[([^A-G]|[^ACDFG][\#]|[A-G][^\#\]][^m]*)\]/';
         // $textRegex = '/([A-Za-z\s,!;\.0-9]*\[([A-G]|[ACDFG][\#])[m]?\][A-Za-z\s,!;\.0-9]*)*/';
