@@ -123,7 +123,16 @@ h2 {
 	font-size: 3rem;
 	font-weight: 500;
 	margin-top: 0;
-	border-bottom: 1px solid var(--text-main-color);
+	/* border-bottom: 1px solid var(--text-main-color); */
+}
+
+.em {
+	background-image: url("../images/em-yellow.svg");
+	background-position: 0 110%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: -20px -32px -13px -16px;
+	padding: 20px 32px 13px 16px;
 }
 
 h4 {

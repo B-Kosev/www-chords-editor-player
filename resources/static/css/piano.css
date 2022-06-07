@@ -77,13 +77,21 @@
 }
 
 h2 {
-	font-size: 3rem;
-	margin: 150px 10% 20px 10%;
-	font-weight: 500;
+	font-size: 5em;
+	margin: 150px 10% 50px 10%;
+	font-weight: 600;
 	color: var(--text-main-color);
 	text-align: center;
 }
 
+.em {
+	background-image: url("../images/em-yellow.svg");
+	background-position: 0 80%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: -20px -32px -13px -16px;
+	padding: 20px 32px 13px 16px;
+}
 /* ======== PIANO ======== */
 
 .pianos {
@@ -168,6 +176,6 @@ audio::-webkit-media-controls-panel {
 
 @media (max-width: 740px) {
 	h2 {
-		font-size: 2rem;
+		font-size: 4em;
 	}
 }

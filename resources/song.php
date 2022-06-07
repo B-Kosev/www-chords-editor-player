@@ -11,7 +11,7 @@
 		<section class="song-info">
 			<section class="song-meta">
 				<ul class="song-meta-text">
-					<h2 class="song-title"></h2>
+					<h2 class="song-title"><span class="em"></span></h2>
 					<h4 class="song-author"></h4>
 					<h4 class="song-key"></h4>
 					<h4 class="song-year"></h4>

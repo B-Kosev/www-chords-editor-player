@@ -8,7 +8,7 @@
 	<body>
 		<?php include('./components/navigation.php')?>
 
-		<h2>Instruments</h2>
+		<h2><span class="em">Instruments</span></h2>
 
 		<section class="cards">
 			<section class="card">

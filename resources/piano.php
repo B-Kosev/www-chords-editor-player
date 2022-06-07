@@ -8,7 +8,7 @@
 	<body>
 		<?php include('./components/navigation.php')?>
 
-		<h2>Piano Chord Chart</h2>
+		<h2><span class="em">Piano</span> Chord Chart</h2>
 
 		<section class="buttons">
 			<figure class="keys">

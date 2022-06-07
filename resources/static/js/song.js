@@ -53,7 +53,7 @@ function getByValue(val) {
 }
 
 const fillData = (song) => {
-	document.querySelector(".song-title").innerHTML = song.title;
+	document.querySelector(".song-title .em").innerHTML = song.title;
 	document.querySelector(".song-author").innerHTML = "Author: " + song.author;
 	document.querySelector(".song-key").innerHTML = "Key: " + song.key;
 	document.querySelector(".song-year").innerHTML = "Year: " + song.year;
