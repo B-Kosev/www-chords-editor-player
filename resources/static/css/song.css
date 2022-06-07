@@ -21,8 +21,8 @@
 }
 
 .song-meta-text {
-	padding: 20px;
-	background-color: var(--header-color);
+	padding: 20px 100px;
+	background-color: var(--bg);
 	border-radius: 20px 0;
 	box-shadow: 0px 0px 1px 0px black;
 }
@@ -40,12 +40,14 @@
 	width: 65%;
 	height: 75%;
 	text-align: center;
-	border: 2px solid black;
-	border-radius: 60px;
-	background-color: var(--header-color);
+	/* border: 2px solid black; */
+	/* border-radius: 60px; */
+	border-radius: 60px 0 60px 0;
+	background-color: var(--bg);
 	padding: 20px;
 	line-height: 2em;
 	min-width: 450px;
+	box-shadow: 0px 0px 1px 0px black;
 }
 
 .chord {
@@ -57,6 +59,12 @@
 
 /* ======== TRANSPOSE ======== */
 
+.buttons {
+	background-color: var(--bg-accented);
+	padding: 10px 0;
+	width: 80vw;
+}
+
 .keys {
 	display: flex;
 	flex-wrap: wrap;
@@ -65,8 +73,8 @@
 	width: 74%;
 	padding: 0 35px;
 	border-radius: 0 20px;
-	background-color: var(--background-color);
-	box-shadow: 0px 0px 1px 0px black;
+	background-color: var(--bg-accented);
+	/* box-shadow: 0px 0px 1px 0px black; */
 }
 
 .keys li {
@@ -80,25 +88,25 @@
 	width: 60px;
 	text-align: center;
 	border-radius: 40px;
-	background: white;
-	/* border: 2px solid var(--primary-color); */
-	color: var(--text-color);
+	background: var(--bg);
+	border: 1px solid var(--text-main-color);
+	color: var(--text-main-color);
 	font-size: 1.1rem;
 	font-weight: bold;
 	cursor: pointer;
 }
 
 .keys .btn:hover {
-	color: var(--header-color);
+	color: var(--text-main-color);
 	/* background-color: var(--primary-color); */
-	background-color: var(--toggle-color);
-	transition: background-color 0.5s ease;
+	background-color: var(--accent-color);
+	/* transition: background-color 0.5s ease; */
 }
 
 .btn.selected {
-	color: var(--header-color);
+	color: var(--text-main-color);
 	/* background-color: var(--primary-color); */
-	background-color: var(--toggle-color);
+	background-color: var(--accent-color);
 }
 
 .keys h4 {
@@ -111,17 +119,17 @@
 /* ======== TEXT ======== */
 
 h2 {
-	color: black;
+	color: var(--text-main-color);
 	font-size: 3rem;
 	font-weight: 500;
 	margin-top: 0;
-	border-bottom: 1px solid var(--text-color);
+	border-bottom: 1px solid var(--text-main-color);
 }
 
 h4 {
 	/* font-family: "Poppins", sans-seri; */
 	font-size: 1.2rem;
-	color: black;
+	color: var(--text-main-color);
 	font-weight: 500;
 }
 
@@ -129,7 +137,6 @@ pre,
 pre > span {
 	font-family: monospace;
 	font-size: 1.1rem;
-	z-index: -1;
 }
 
 /* ======== ON/OFF BUTTON ======== */
@@ -155,7 +162,7 @@ pre > span {
 .slider {
 	position: absolute;
 	cursor: pointer;
-	background-color: var(--text-color);
+	background-color: var(--text-main-color);
 	margin-left: 30%;
 	width: 60px;
 	height: 34px;
@@ -167,7 +174,7 @@ pre > span {
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	border-radius: 34px;
-	z-index: -1;
+	/* z-index: -1; */
 }
 
 .slider:before {
@@ -181,16 +188,16 @@ pre > span {
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	border-radius: 50%;
-	z-index: -1;
+	/* z-index: -1; */
 }
 
 input:checked + .slider {
 	/* background-color: var(--primary-color); */
-	background-color: var(--toggle-color);
+	background-color: var(--primary-color);
 }
 
 input:focus + .slider {
-	box-shadow: 0 0 1px var(--body-color);
+	box-shadow: 0 0 1px var(--bg);
 }
 
 input:checked + .slider:before {
@@ -205,8 +212,8 @@ input:checked + .slider:before {
 	display: flex;
 	width: 74%;
 	border-radius: 0 20px;
-	background-color: var(--background-color);
-	box-shadow: 0px 0px 1px 0px black;
+	background-color: var(--bg-accented);
+	/* box-shadow: 0px 0px 1px 0px black; */
 }
 
 .song-chords li {
@@ -217,16 +224,22 @@ input:checked + .slider:before {
 	width: 60px;
 	list-style: none;
 	cursor: pointer;
-	background-color: var(--toggle-color);
-	border: 1px solid var(--toggle-color);
-	border-radius: 6px;
+	background-color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+	/* border-radius: 6px; */
 	padding-top: 5px;
 
-	box-shadow: rgb(0 0 0 / 10%) 0 2px 4px 0;
+	/* box-shadow: rgb(0 0 0 / 10%) 0 2px 4px 0; */
+}
+
+.song-chords li:hover {
+	background-color: var(--bg);
+	color: var(--text-main-color);
+	border: 1px solid var(--text-main-color);
 }
 
 .song-chords-link {
-	color: white;
+	color: var(--text-main-color);
 	width: 100%;
 	font-size: 1.1rem;
 	font-weight: bold;

@@ -30,33 +30,35 @@
 				></iframe>
 			</section>
 
-			<section class="toggle-button">
-				<label class="switch">
-					<h4 class="switch-title">Display Chords:</h4>
-					<input type="checkbox" class="checkbox" id="checkbox" checked />
-					<span class="slider"></span>
-				</label>
+			<section class="buttons">
+				<section class="toggle-button">
+					<label class="switch">
+						<h4 class="switch-title">Display Chords:</h4>
+						<input type="checkbox" class="checkbox" id="checkbox" checked />
+						<span class="slider"></span>
+					</label>
+				</section>
+	
+				<ul class="keys" id="keys">
+					<h4 class="transpose">Transpose:</h4>
+					<li><button id="c" class="btn key selected" type="button">C</button></li>
+					<li><button id="cs" class="btn key" type="button">C#</button></li>
+					<li><button id="d" class="btn key" type="button">D</button></li>
+					<li><button id="ds" class="btn key" type="button">D#</button></li>
+					<li><button id="e" class="btn key" type="button">E</button></li>
+					<li><button id="f" class="btn key" type="button">F</button></li>
+					<li><button id="fs" class="btn key" type="button">F#</button></li>
+					<li><button id="g" class="btn key" type="button">G</button></li>
+					<li><button id="gs" class="btn key" type="button">G#</button></li>
+					<li><button id="a" class="btn key" type="button">A</button></li>
+					<li><button id="as" class="btn key" type="button">A#</button></li>
+					<li><button id="b" class="btn key" type="button">B</button></li>
+				</ul>
+
+				<ul class="song-chords" id="song-chords">
+					<h4 class="song-chords-title">Learn chords from the song:</h4>
+				</ul>
 			</section>
-
-			<ul class="keys" id="keys">
-				<h4 class="transpose">Transpose:</h4>
-				<li><button id="c" class="btn key selected" type="button">C</button></li>
-				<li><button id="cs" class="btn key" type="button">C#</button></li>
-				<li><button id="d" class="btn key" type="button">D</button></li>
-				<li><button id="ds" class="btn key" type="button">D#</button></li>
-				<li><button id="e" class="btn key" type="button">E</button></li>
-				<li><button id="f" class="btn key" type="button">F</button></li>
-				<li><button id="fs" class="btn key" type="button">F#</button></li>
-				<li><button id="g" class="btn key" type="button">G</button></li>
-				<li><button id="gs" class="btn key" type="button">G#</button></li>
-				<li><button id="a" class="btn key" type="button">A</button></li>
-				<li><button id="as" class="btn key" type="button">A#</button></li>
-				<li><button id="b" class="btn key" type="button">B</button></li>
-			</ul>
-
-			<ul class="song-chords" id="song-chords">
-				<h4 class="song-chords-title">Learn chords from the song:</h4>
-			</ul>
 
 			<pre class="song-data" id="song-data"></pre>
 		</section>

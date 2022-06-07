@@ -1,21 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kreon:wght@350&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Thasadith:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kodchasan:wght@200;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pavanam&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pavanam&display=swap"); */
 
-:root {
+/* :root {
 	--body-color: #e4e9f7;
-	/* --header-color: red; */
 	--header-color: #fff;
 	--primary-color: #695cfe;
 	--primary-color-dark: #4559b2;
-	/* --toggle-color: #59f77b; */
 	--toggle-color: #a990ff;
 	--text-color: #707070;
-	--background-color: #7988974f; /*ITS LOW OPACITY!!!! */
-	/* --background-color: #F6EBFF; */
+	--background-color: #7988974f; /*ITS LOW OPACITY!!!! 
+} */
+
+:root {
+	--text-main: 56, 55, 56; /* paragraf */
+	--text-main-color: rgb(var(--text-main)); /* heading */
+	--text-on-dark: 255, 255, 255;
+	--text-on-dark-color: rgb(var(--text-on-dark));
+	--bg-accented: #f7f5f1;
+	--bg: #f9f9f9;
+	--bg-color: #ececec;
+	--border-color: #f2f2f2;
+	--primary-color: #7cecc5;
+	--accent-color: #ff7b4f;
 }
 
 /* ======== MAIN ======== */
@@ -24,7 +34,8 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	/* font-family: "Poppins", sans-serif; */
-	font-family: Pavanam;
+	font-family: Graphik, sans-serif;
+	/* font-family: Pavanam; */
 	letter-spacing: 0.5px;
 }
 
@@ -34,17 +45,20 @@ body {
 	padding: 0;
 	outline: 0;
 	border: 0;
+	color: var(--text-main-color);
+	background-color: var(--bg-color);
 }
 
 body {
 	/* background-color: var(--body-color); */
-	background-color: #fbf8ff;
+	/* background-color: #fbf8ff; */
+	/* background-color: var(--bg); */
 	/* background-color: #e1f4f8; */
 	/* background: linear-gradient(90deg, #e4e9f7, #e2e9f8, #e1eafa, #dfeafb, #dceafc, #daebfd, #d8ebfe, #d5ecff); */
 }
 
 h2 {
-	font-family: Kodchasan;
+	/* font-family: Kodchasan; */
 	letter-spacing: normal;
 }
 

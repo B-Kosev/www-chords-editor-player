@@ -1,5 +1,10 @@
 /* ======== BUTTONS ======== */
 
+.buttons {
+	background-color: var(--bg-accented);
+	padding: 10px 0;
+}
+
 .keys,
 .min-maj {
 	display: flex;
@@ -7,17 +12,17 @@
 	align-items: center;
 	justify-content: center;
 	/* margin-left: 10%; */
-	background-color: var(--background-color);
-	box-shadow: 0px 0px 1px 0px black;
+	background-color: var(--bg-accented);
+	/* box-shadow: 0px 0px 1px 0px black; */
 }
 
-.keys {
+/* .keys {
 	border-radius: 20px 20px 0px 0px;
 }
 
 .min-maj {
 	border-radius: 0px 0px 20px 20px;
-}
+} */
 
 .keys ul,
 .min-maj ul {
@@ -37,9 +42,9 @@
 	width: 60px;
 	text-align: center;
 	border-radius: 40px;
-	background: white;
-	border: groove var(--body-color);
-	color: var(--text-color);
+	background: var(--bg);
+	border: 1px solid var(--text-main-color);
+	color: var(--text-main-color);
 	font-size: 1.1rem;
 	font-weight: bold;
 	cursor: pointer;
@@ -51,16 +56,16 @@
 
 .keys .btn:hover,
 .min-maj .btn:hover {
-	color: var(--header-color);
+	color: var(--text-main-color);
 	/* background-color: var(--primary-color); */
-	background-color: var(--toggle-color);
-	transition: background-color 0.5s ease;
+	background-color: var(--accent-color);
+	/* transition: background-color 0.5s ease; */
 }
 
 .btn.selected {
-	color: var(--header-color);
+	color: var(--text-main-color);
 	/* background-color: var(--primary-color); */
-	background-color: var(--toggle-color);
+	background-color: var(--accent-color);
 }
 
 /* ======== TEXT ======== */
@@ -68,15 +73,14 @@
 .keys figcaption,
 .min-maj figcaption {
 	font-size: 1.5rem;
-	color: var(--text-color);
+	color: var(--text-main-color);
 }
 
 h2 {
 	font-size: 3rem;
-	margin: 130px 10% 0 10%;
-	margin-bottom: 0;
+	margin: 150px 10% 20px 10%;
 	font-weight: 500;
-	color: var(--text-color);
+	color: var(--text-main-color);
 	text-align: center;
 }
 
@@ -89,11 +93,12 @@ h2 {
 	flex-wrap: wrap;
 
 	margin: 3% 1%;
-	background-color: var(--background-color);
-	border-radius: 40px;
+	background-color: var(--bg);
+	/* border-radius: 40px; */
 	/* border: 1px solid black; */
-	border: groove var(--body-color);
-	box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.6);
+	/* border: groove var(--body-color); */
+	/* border: 1px solid var(--text-main-color); */
+	/* box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.6); */
 }
 
 .piano-keys {
@@ -145,7 +150,7 @@ h2 {
 
 .white.active,
 .black.active {
-	background-color: var(--toggle-color);
+	background-color: var(--accent-color);
 }
 
 audio {
@@ -156,7 +161,7 @@ audio {
 }
 
 audio::-webkit-media-controls-panel {
-	background-color: var(--header-color);
+	background-color: var(--bg-accented);
 }
 
 /* ======== RESPONSIVENESS ======== */

@@ -5,6 +5,7 @@
 	justify-content: flex-start;
 	margin-top: 2%;
 	margin-left: 80px;
+	background-color: var(--bg-color);
 }
 
 .card {
@@ -20,8 +21,9 @@ img {
 
 h2 {
 	/* font-family: "Poppins", sans-serif; */
-	color: var(--text-color);
+	color: var(--text-main-color);
 	font-size: 3rem;
 	font-weight: 500;
 	margin: 130px 0 0 96px;
+	background-color: var(--bg-color);
 }

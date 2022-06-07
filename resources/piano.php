@@ -10,29 +10,31 @@
 
 		<h2>Piano Chord Chart</h2>
 
-		<figure class="keys">
-			<ul>
-				<li><button id="c" class="btn key selected" type="button">C</button></li>
-				<li><button id="cs" class="btn key" type="button">C#</button></li>
-				<li><button id="d" class="btn key" type="button">D</button></li>
-				<li><button id="ds" class="btn key" type="button">D#</button></li>
-				<li><button id="e" class="btn key" type="button">E</button></li>
-				<li><button id="f" class="btn key" type="button">F</button></li>
-				<li><button id="fs" class="btn key" type="button">F#</button></li>
-				<li><button id="g" class="btn key" type="button">G</button></li>
-				<li><button id="gs" class="btn key" type="button">G#</button></li>
-				<li><button id="a" class="btn key" type="button">A</button></li>
-				<li><button id="as" class="btn key" type="button">A#</button></li>
-				<li><button id="b" class="btn key" type="button">B</button></li>
-			</ul>
-		</figure>
+		<section class="buttons">
+			<figure class="keys">
+				<ul>
+					<li><button id="c" class="btn key selected" type="button">C</button></li>
+					<li><button id="cs" class="btn key" type="button">C#</button></li>
+					<li><button id="d" class="btn key" type="button">D</button></li>
+					<li><button id="ds" class="btn key" type="button">D#</button></li>
+					<li><button id="e" class="btn key" type="button">E</button></li>
+					<li><button id="f" class="btn key" type="button">F</button></li>
+					<li><button id="fs" class="btn key" type="button">F#</button></li>
+					<li><button id="g" class="btn key" type="button">G</button></li>
+					<li><button id="gs" class="btn key" type="button">G#</button></li>
+					<li><button id="a" class="btn key" type="button">A</button></li>
+					<li><button id="as" class="btn key" type="button">A#</button></li>
+					<li><button id="b" class="btn key" type="button">B</button></li>
+				</ul>
+			</figure>
 
-		<figure class="min-maj">
-			<ul>
-				<li><button id="maj" class="btn type selected" type="button">Major</button></li>
-				<li><button id="min" class="btn type" type="button">Minor</button></li>
-			</ul>
-		</figure>
+			<figure class="min-maj">
+				<ul>
+					<li><button id="maj" class="btn type selected" type="button">Major</button></li>
+					<li><button id="min" class="btn type" type="button">Minor</button></li>
+				</ul>
+			</figure>
+		</section>
 
 		<section class="pianos">
 			<section class="piano inv1">
