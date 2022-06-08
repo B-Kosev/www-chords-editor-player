@@ -8,10 +8,6 @@ const fetchChord = () => {
 	params = new URL(document.location).searchParams;
 	const chordId = params.get("chordId");
 	const chordType = params.get("chordType");
-	// const chordId = document.getElementById(urlChordId);
-	// const chordType = document.getElementById(urlChordType);
-	// const chordId = document.querySelector(".btn.key.selected").getAttribute("id");
-	// const chordType = document.querySelector(".btn.type.selected").getAttribute("id");
 	let chord;
 	if (chordType === "maj") {
 		chord = chordId;

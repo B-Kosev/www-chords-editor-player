@@ -1,5 +1,4 @@
 window.onload = function () {
-	// var title = localStorage.getItem("song-title");
 	const params = new URL(document.location).searchParams;
 	const title = params.get("title");
 	const chords = params.get("chords");

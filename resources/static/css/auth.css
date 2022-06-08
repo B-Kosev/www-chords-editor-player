@@ -4,13 +4,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--header-color);
+	background-color: var(--bg-accented);
 	margin: 150px 30% 5% 30%;
 	padding: 2% 0 2% 0;
-	/* min-width: 280px; */
 	width: 40%;
-	border-radius: 20px;
-
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
 }
 
@@ -18,39 +15,37 @@
 label {
 	color: var(--text-color);
 	margin: 15px 0 0 0;
-	/* width: 300px; */
 	width: 50%;
 	min-width: 170px;
 	height: 35px;
-	border-radius: 10px;
+
+	/* border-radius: 10px; */
 }
 
 .field,
 .btn {
-	border: groove var(--body-color);
+	border: 1px solid var(--text-main-color);
 }
 
 .btn {
 	outline: none;
 	margin: 10px 0 20px 0;
 	height: 40px;
-	/* width: 300px; */
 	width: 50%;
 	min-width: 170px;
 	text-align: center;
-	border-radius: 20px;
-	/* border: 2px solid var(--primary-color); */
 	color: var(--header-color);
 	font-size: 1.1rem;
 	font-weight: bold;
 	cursor: pointer;
-	background-color: var(--primary-color);
+	background-color: var(--text-main-color);
+	color: var(--text-on-dark-color);
 	transition: all, transform 0.5s ease;
 }
 
 .btn:hover {
-	/* transform: scale(1.1); */
-	background-color: var(--primary-color-dark);
+	background-color: var(--text-on-dark-color);
+	color: var(--text-main-color);
 }
 
 label {

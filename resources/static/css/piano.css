@@ -11,18 +11,8 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	/* margin-left: 10%; */
 	background-color: var(--bg-accented);
-	/* box-shadow: 0px 0px 1px 0px black; */
 }
-
-/* .keys {
-	border-radius: 20px 20px 0px 0px;
-}
-
-.min-maj {
-	border-radius: 0px 0px 20px 20px;
-} */
 
 .keys ul,
 .min-maj ul {
@@ -57,14 +47,11 @@
 .keys .btn:hover,
 .min-maj .btn:hover {
 	color: var(--text-main-color);
-	/* background-color: var(--primary-color); */
 	background-color: var(--accent-color);
-	/* transition: background-color 0.5s ease; */
 }
 
 .btn.selected {
 	color: var(--text-main-color);
-	/* background-color: var(--primary-color); */
 	background-color: var(--accent-color);
 }
 
@@ -102,11 +89,6 @@ h2 {
 
 	margin: 3% 1%;
 	background-color: var(--bg);
-	/* border-radius: 40px; */
-	/* border: 1px solid black; */
-	/* border: groove var(--body-color); */
-	/* border: 1px solid var(--text-main-color); */
-	/* box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.6); */
 }
 
 .piano-keys {
@@ -152,7 +134,6 @@ h2 {
 	margin: 0px 1px;
 	width: 18px;
 	height: 60px;
-	/* outline: 1px solid black; */
 	z-index: 2;
 }
 

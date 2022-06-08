@@ -102,22 +102,4 @@ const loginValidation = {
 
 		password.setAttribute("style", "border: solid red");
 	},
-
-	// checkLoginStatus: () => {
-	// 	return fetch("../php/web/UserController.php").then((response) => {
-	// 		if (response.ok) {
-	// 			return response.json();
-	// 		} else {
-	// 			throw new Error();
-	// 		}
-	// 	});
-	// },
 };
-
-// loginValidation.checkLoginStatus().then((loginStatus) => {
-// 	if (loginStatus.logged) {
-// 		window.location.replace("./index.html");
-// 	} else {
-// 		console.log("not logged");
-// 	}
-// });

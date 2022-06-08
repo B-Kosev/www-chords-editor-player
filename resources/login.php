@@ -9,7 +9,6 @@
 		<?php include('./components/navigation.php')?>
 
 		<section>
-			<!-- action="../php/web/UserController.php" method="post" -->
 			<form class="form" id="login-form">
 				<label>Log in</label>
 				<input class="field" type="text" placeholder="Username" name="username" id="username" required />

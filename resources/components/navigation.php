@@ -1,5 +1,5 @@
 <header class="header">
-    <a href="index.php" class="title">12Keys</a>
+    <a href="index.php" class="title"><span class="title-number">12</span>Keys</a>
     <nav>
         <ul class="nav">
             <li><a href="instruments.php">Chords</a></li>

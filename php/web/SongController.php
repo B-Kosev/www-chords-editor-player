@@ -17,7 +17,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $response = SongService::getAllSongs();
         }
 
-        // print_r($response);
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
 
         break;
@@ -32,7 +31,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $duration = $requestBody['duration'];
         $tempo = intval($requestBody['tempo']);
         $signature = $requestBody['signature'];
-        // TODO: Parse the link according to the explanation given
         $ytlink = $requestBody['ytlink'];
         $text = $requestBody['text'];
 
@@ -111,8 +109,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $ytlink = str_replace("watch?v=","embed/",$ytlink);
 
         $textRegex ='/\[([^A-G]|[^ACDFG][\#]|[A-G][^\#\]][^m]*)\]/';
-        // $textRegex = '/([A-Za-z\s,!;\.0-9]*\[([A-G]|[ACDFG][\#])[m]?\][A-Za-z\s,!;\.0-9]*)*/';
-        // $textRegex = '/\[([^A-G](.)*|[^ACDFG][\#](.)*|[A-G][^\#][^m]*(.)*)\]/';
         if(preg_match($textRegex,$text) == 1){
             $success = false;
             $errors += ["text" => "Lyrics are not valid."];
@@ -123,9 +119,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
             echo json_encode($errors, JSON_UNESCAPED_UNICODE);
         }else{
             $conn = (new Database())->getConnection();
-            // cast year to int
-            // $stmt = $conn->prepare("INSERT INTO `songs` (`title`, `author`, `key`, `year`, `duration`, `tempo`, `url`, `text`) VALUES (:title, :author, :songKey, :year, :duration, :tempo, :ytlink, :text)");
-             $stmt = $conn->prepare("INSERT INTO `songs` (`title`, `author`, `key`, `year`, `duration`, `tempo`, `signature`, `url`, `text`) VALUES (:title, :author, :songKey, :year, :duration, :tempo, :signature, :ytlink, :text)");
+            
+            $stmt = $conn->prepare("INSERT INTO `songs` (`title`, `author`, `key`, `year`, `duration`, `tempo`, `signature`, `url`, `text`) VALUES (:title, :author, :songKey, :year, :duration, :tempo, :signature, :ytlink, :text)");
             $stmt->bindParam(':title', $title);
             $stmt->bindParam(':author', $author);
             $stmt->bindParam(':songKey', $songKey);
@@ -136,21 +131,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $stmt->bindParam(':ytlink', $ytlink);
             $stmt->bindParam(':text', $text);
             $stmt->execute();
+            
             echo json_encode(["success" => $success]);
-            // echo json_encode(['title' => $title, 'author' => $author, 'key'=>$key, 'year'=> $year, 'text'=> $text]);
-            // $conn = new mysqli("localhost","root","","chordsplayereditor");
-        
-            // if($conn->connect_error){
-            //     die("Connection Failed : ".$conn->connect_error);
-            // }else{
-            //     $stmt = $conn->prepare("INSERT INTO songs (title, author, key, year, text) VALUES (?, ?, ?, ?, ?)");
-            //     $stmt->bind_param("sssis", $title, $author, $key, $year, $text);
-            //     $stmt->execute();
-            //     $stmt->close();
-            //     $conn->close();
-
-            //     echo json_encode(["success" => $success]);
-            // }
         }
         break;
     }

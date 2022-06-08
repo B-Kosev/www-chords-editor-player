@@ -27,30 +27,6 @@ const statusValidation = {
 			}
 		});
 	},
-
-	// TO DO:
-	// checkPageVisibility: () => {
-	// 	const body = {
-	// 		page: fileName,
-	// 	};
-	// 	fetch("../php/web/UserController.php", {
-	// 		headers: {
-	// 			"Content-Type": "application/json",
-	// 		},
-	// 		method: "POST",
-	// 		body: JSON.stringify(body),
-	// 	})
-	// 		.then((response) => {
-	// 			if (response.ok) {
-	// 				return response.json();
-	// 			} else {
-	// 				throw new Error();
-	// 			}
-	// 		})
-	// 		.catch(() => {
-	// 			console.log("Error checking visibility.");
-	// 		});
-	// },
 };
 
 const logout = () => {
@@ -74,10 +50,7 @@ statusValidation.checkLoginStatus().then((loginStatus) => {
 		} else if (fileName == "songlist.php") {
 			document.getElementById("new-song-btn").setAttribute("style", "display: none");
 		}
-		console.log("not logged");
 	}
 });
-
-// statusValidation.checkPageVisibility();
 
 document.getElementById("logout-button").addEventListener("click", logout);

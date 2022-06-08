@@ -17,7 +17,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
             break;
         }
 
-        // print_r($response);
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
 
         break;

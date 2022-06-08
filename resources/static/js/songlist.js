@@ -16,7 +16,6 @@ const fillList = (songs) => {
 		var a = document.createElement("a");
 		a.setAttribute("class", "song-link");
 
-		// TODO: Handle 'showChords' parameter
 		a.setAttribute("href", "song.php?title=" + song.title + "&chords=" + showChords);
 
 		var title = document.createElement("h3");
@@ -45,24 +44,5 @@ const fillList = (songs) => {
 		document.querySelector(".cards").appendChild(card);
 	});
 
-	// addCardListeners();
 };
 
-// const addCardListeners = () => {
-// 	document.querySelectorAll(".card").forEach((element) => {
-// 		element.addEventListener("click", function (e) {
-// 			var title = element.querySelector(".song-title").innerHTML;
-// 			localStorage.setItem("song-title", title);
-// 		});
-// 	});
-// };
-
-// <section class="card">
-// 	<a href="song.html">
-// 		<!-- REMOVE HARD CODED VALUES -->
-// 		<h3 class="song-title">Amazing Grace</h3>
-// 		<p class="song-author">Author: John Newton</p>
-// 		<p class="song-key">Key: E</p>
-// 		<p class="song-year">Year: 1772</p>
-// 	</a>
-// </section>

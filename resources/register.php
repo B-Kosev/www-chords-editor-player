@@ -4,13 +4,11 @@
 		<title>Chord Editor</title>
 		<?php include('./components/head.php')?>
 		<link href="./static/css/auth.css" rel="stylesheet" />
-		<!-- <script src="./static/js/loginStatus.js"></script> -->
 	</head>
 	<body>
 		<?php include('./components/navigation.php')?>
 
 		<section>
-			<!-- action="../php/web/UserController.php" method="post"  -->
 			<form class="form" id="register-form">
 				<label>Register</label>
 				<input type="text" class="field" placeholder="Username" name="username" id="username" required />
