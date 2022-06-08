@@ -100,6 +100,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $errors += ["signature" => "Time signature must be one of 2/4, 3/4, 4/4, 2/2, 6/8, 9/8, 12/8."];
         }
 
+        // TODO: Delete all after the first &
         $ytlinkRegex='/^(https:\/\/www\.)?youtube.com\/watch\?v=/';
         if(!preg_match($ytlinkRegex,$ytlink)){
             $success = false;
