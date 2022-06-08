@@ -26,11 +26,10 @@
 				</a>
 			</section>
 
-			<!-- TODO: Change image, add support for query params -->
 			<section class="card">
 				<a href="songlist.php?chords=false">
 					<figure class="fig">
-						<img src="./static/images/lyrics2.png" />
+						<img src="./static/images/lyrics1.png" />
 						<figcaption>Lyrics</figcaption>
 					</figure>
 				</a>
