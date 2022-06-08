@@ -9,9 +9,10 @@
 		<?php include('./components/navigation.php')?>
 
 		<section class="newSong">
-			<h2><span class="em">Song</span> List</h2>
 			<a href="addsong.php" class="link" href="addsong.html" id="new-song-btn">New Song</a>
 		</section>
+
+		<h2><span class="em">Song</span> List</h2>
 
 		<section class="cards"></section>
 

@@ -41,7 +41,7 @@
 }
 
 .auth {
-	width: 40%;
+	width: 30%;
 }
 
 .nav li,
@@ -55,6 +55,9 @@
 /* .auth li {
 	background-color: var(--primary-color);
 } */
+.nav li a:hover {
+	text-decoration: underline;
+}
 
 .nav a,
 .auth a {
@@ -126,7 +129,7 @@
 	display: none;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1220px) {
 	.header {
 		padding: 0 2%;
 		height: 140px;
@@ -196,5 +199,39 @@
 	.nav li a:hover {
 		background-color: var(--text-main-color);
 		color: var(--text-on-dark-color);
+	}
+
+	.auth {
+		font-size: 1.1rem;
+	}
+}
+
+/* == TEXT RESIZING IN HEADER == */
+
+@media only screen and (max-width: 1380px) {
+	.nav,
+	.auth {
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (max-width: 1271px) {
+	.nav,
+	.auth {
+		font-size: 0.9rem;
+	}
+}
+
+@media only screen and (max-width: 1020px) {
+	.nav,
+	.auth {
+		font-size: 0.8rem;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.nav,
+	.auth {
+		font-size: 1.1rem;
 	}
 }

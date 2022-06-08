@@ -1,8 +1,9 @@
 .newSong {
 	display: flex;
-	justify-content: space-between;
+	justify-content: right;
 	flex-wrap: wrap;
 	font-size: 1.2rem;
+	margin-top: 145px;
 	/* margin: 40px 0 0 96px; */
 }
 
@@ -19,7 +20,6 @@
 	text-align: center;
 	padding: 10px;
 	height: 45px;
-	margin-top: 130px;
 }
 
 .link:hover {
@@ -62,9 +62,10 @@ h2 {
 	color: var(--text-main-color);
 	font-size: 5em;
 	font-weight: 600;
-	margin: 150px 0 0 0;
+	margin: -30px 0 -30px 0;
 	background-color: var(--bg-color);
 	text-align: center;
+	width: 100%;
 }
 
 .em {
@@ -84,4 +85,12 @@ p {
 
 h3 {
 	border-bottom: 1px solid var(--text-main-color);
+}
+
+/* ======== RESPONSIVENESS ======== */
+
+@media (max-width: 740px) {
+	h2 {
+		margin: 0;
+	}
 }

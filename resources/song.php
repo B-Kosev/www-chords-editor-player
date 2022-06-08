@@ -31,13 +31,13 @@
 			</section>
 
 			<section class="buttons">
-				<section class="toggle-button">
+				<!-- <section class="toggle-button"> -->
 					<label class="switch">
 						<h4 class="switch-title">Display Chords:</h4>
 						<input type="checkbox" class="checkbox" id="checkbox" checked />
 						<span class="slider"></span>
 					</label>
-				</section>
+				<!-- </section> -->
 	
 				<ul class="keys" id="keys">
 					<h4 class="transpose">Transpose:</h4>

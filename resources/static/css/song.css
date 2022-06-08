@@ -79,7 +79,7 @@
 
 .keys li {
 	display: inline-block;
-	padding: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 0;
 }
 
 .btn {
@@ -112,7 +112,7 @@
 .keys h4 {
 	display: inline-block;
 	/* padding: 10px 20px 0px 0px; */
-	padding: 0;
+	padding: 0 10px 0 0;
 	margin: 0;
 }
 
@@ -150,16 +150,13 @@ pre > span {
 
 /* ======== ON/OFF BUTTON ======== */
 
-.toggle-button {
-	width: 69%;
-	margin: 0 0 10px 0;
-	height: 35px;
-}
-
 .switch {
 	position: relative;
-	display: inline;
-	width: 60px;
+	display: flex;
+	justify-content: left;
+	width: 200px;
+	height: 35px;
+	margin: 0 0 20px 35px;
 }
 
 .checkbox {
@@ -176,14 +173,13 @@ pre > span {
 	width: 60px;
 	height: 34px;
 	content: "";
-	top: 16px;
-	left: 140px;
+	top: 17px;
+	left: 120px;
 	right: 0;
 	bottom: 0;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	border-radius: 34px;
-	/* z-index: -1; */
 }
 
 .slider:before {
@@ -219,7 +215,7 @@ input:checked + .slider:before {
 
 .song-chords {
 	display: flex;
-	width: 74%;
+	/* width: 74%; */
 	border-radius: 0 20px;
 	background-color: var(--bg-accented);
 	/* box-shadow: 0px 0px 1px 0px black; */
@@ -236,7 +232,7 @@ input:checked + .slider:before {
 	background-color: var(--primary-color);
 	border: 1px solid var(--primary-color);
 	/* border-radius: 6px; */
-	padding-top: 5px;
+	padding-top: 7px;
 
 	/* box-shadow: rgb(0 0 0 / 10%) 0 2px 4px 0; */
 }
