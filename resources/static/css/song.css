@@ -206,6 +206,7 @@ input:checked + .slider:before {
 	display: flex;
 	border-radius: 0 20px;
 	background-color: var(--bg-accented);
+	padding-left: 35px;
 }
 
 .song-chords li {
