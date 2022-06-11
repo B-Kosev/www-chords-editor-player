@@ -10,16 +10,20 @@
 
 		<h2><span class="em">Instruments</span></h2>
 
-		<section class="cards">
-			<section class="card">
-				<a href="piano.php?chordId=c&chordType=maj">
-					<figure class="fig">
-						<img src="./static/images/piano.jpg" />
-						<figcaption>Piano</figcaption>
-					</figure>
-				</a>
+		<section class="wrapper">
+			<section class="cards">
+				<section class="card">
+					<a href="piano.php?chordId=c&chordType=maj">
+						<figure class="fig">
+							<img src="./static/images/piano.jpg" />
+							<figcaption>Piano</figcaption>
+						</figure>
+					</a>
+				</section>
 			</section>
 		</section>
+
+		<?php include('./components/footer.php')?>
 
 		<script src="./static/js/loginStatus.js"></script>
 		<script src="./static/js/navigation.js"></script>

@@ -31,12 +31,10 @@
 	height: 40px;
 	width: 60px;
 	text-align: center;
-	border-radius: 40px;
 	background: var(--bg);
 	border: 1px solid var(--text-main-color);
 	color: var(--text-main-color);
 	font-size: 1.1rem;
-	font-weight: bold;
 	cursor: pointer;
 }
 
@@ -46,12 +44,12 @@
 
 .keys .btn:hover,
 .min-maj .btn:hover {
-	color: var(--text-main-color);
+	color: var(--text-on-dark-color);
 	background-color: var(--accent-color);
 }
 
 .btn.selected {
-	color: var(--text-main-color);
+	color: var(--text-on-dark-color);
 	background-color: var(--accent-color);
 }
 

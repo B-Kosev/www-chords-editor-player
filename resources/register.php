@@ -8,7 +8,7 @@
 	<body>
 		<?php include('./components/navigation.php')?>
 
-		<section>
+		<section class="wrapper">
 			<form class="form" id="register-form">
 				<label>Register</label>
 				<input type="text" class="field" placeholder="Username" name="username" id="username" required />
@@ -29,6 +29,8 @@
 				<input type="submit" value="Sign up" class="btn" name="register" />
 			</form>
 		</section>
+
+		<?php include('./components/footer.php')?>
 
 		<script src="./static/js/loginStatus.js"></script>
 		<script src="./static/js/register.js"></script>

@@ -8,7 +8,7 @@
 	<body>
 		<?php include('./components/navigation.php')?>
 
-		<section>
+		<section class="wrapper">
 			<form class="form" id="song-form">
 				<label>Add song</label>
 				<input class="field" type="text" placeholder="Title" name="title" id="title" required />
@@ -32,6 +32,8 @@
 				<input class="btn" type="submit" value="Add Song" name="add-song" id="submit-btn" />
 			</form>
 		</section>
+
+		<?php include('./components/footer.php')?>
 
 		<script src="./static/js/loginStatus.js"></script>
 		<script src="./static/js/addSong.js"></script>

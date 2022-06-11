@@ -8,13 +8,17 @@
 	<body>
 		<?php include('./components/navigation.php')?>
 
-		<section class="newSong">
-			<a href="addsong.php" class="link" href="addsong.html" id="new-song-btn">New Song</a>
+		<section class="wrapper">
+			<section class="newSong">
+				<a href="addsong.php" class="link" href="addsong.html" id="new-song-btn">New Song</a>
+			</section>
+
+			<h2><span class="em">Song</span> List</h2>
+
+			<section class="cards"></section>
 		</section>
 
-		<h2><span class="em">Song</span> List</h2>
-
-		<section class="cards"></section>
+		<?php include('./components/footer.php')?>
 
 		<script src="./static/js/loginStatus.js"></script>
 		<script src="./static/js/songlist.js"></script>

@@ -84,22 +84,20 @@
 	height: 40px;
 	width: 60px;
 	text-align: center;
-	border-radius: 40px;
 	background: var(--bg);
 	border: 1px solid var(--text-main-color);
 	color: var(--text-main-color);
 	font-size: 1.1rem;
-	font-weight: bold;
 	cursor: pointer;
 }
 
 .keys .btn:hover {
-	color: var(--text-main-color);
+	color: var(--text-on-dark-color);
 	background-color: var(--accent-color);
 }
 
 .btn.selected {
-	color: var(--text-main-color);
+	color: var(--text-on-dark-color);
 	background-color: var(--accent-color);
 }
 
@@ -109,34 +107,36 @@
 	margin: 0;
 }
 
-/* ======== TEXT ======== */
+/* ======== LINKS ======== */
 
-h2 {
+.song-chords {
+	display: flex;
+	border-radius: 0 20px;
+	background-color: var(--bg-accented);
+	padding-left: 35px;
+}
+
+.song-chords li {
+	margin: 15px 10px 10px 10px;
+	text-align: center;
+	list-style: none;
+	height: 37px;
+	width: 60px;
+	list-style: none;
+	cursor: pointer;
+	/* background-color: var(--bg); */
+	border-bottom: 6px solid var(--primary-color);
+	padding-top: 7px;
+}
+
+.song-chords-link {
 	color: var(--text-main-color);
-	font-size: 3rem;
-	font-weight: 500;
-	margin-top: 0;
-}
-
-.em {
-	background-image: url("../images/em-yellow.svg");
-	background-position: 0 110%;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	margin: -20px -32px -13px -16px;
-	padding: 20px 32px 13px 16px;
-}
-
-h4 {
-	font-size: 1.2rem;
-	color: var(--text-main-color);
-	font-weight: 500;
-}
-
-pre,
-pre > span {
-	font-family: monospace;
+	width: 100%;
 	font-size: 1.1rem;
+}
+
+.song-chords li:hover {
+	border-bottom: 6px solid var(--accent-color);
 }
 
 /* ======== ON/OFF BUTTON ======== */
@@ -200,37 +200,32 @@ input:checked + .slider:before {
 	transform: translateX(26px);
 }
 
-/* ======== LINKS ======== */
+/* ======== TEXT ======== */
 
-.song-chords {
-	display: flex;
-	border-radius: 0 20px;
-	background-color: var(--bg-accented);
-	padding-left: 35px;
-}
-
-.song-chords li {
-	margin: 15px 10px 10px 10px;
-	text-align: center;
-	list-style: none;
-	height: 37px;
-	width: 60px;
-	list-style: none;
-	cursor: pointer;
-	background-color: var(--primary-color);
-	border: 1px solid var(--primary-color);
-	padding-top: 7px;
-}
-
-.song-chords li:hover {
-	background-color: var(--bg);
+h2 {
 	color: var(--text-main-color);
-	border: 1px solid var(--text-main-color);
+	font-size: 3rem;
+	font-weight: 500;
+	margin-top: 0;
 }
 
-.song-chords-link {
+.em {
+	background-image: url("../images/em-yellow.svg");
+	background-position: 0 110%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: -20px -32px -13px -16px;
+	padding: 20px 32px 13px 16px;
+}
+
+h4 {
+	font-size: 1.2rem;
 	color: var(--text-main-color);
-	width: 100%;
+	font-weight: 500;
+}
+
+pre,
+pre > span {
+	font-family: monospace;
 	font-size: 1.1rem;
-	font-weight: bold;
 }

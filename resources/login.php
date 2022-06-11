@@ -8,17 +8,21 @@
 	<body>
 		<?php include('./components/navigation.php')?>
 
-		<section>
-			<form class="form" id="login-form">
-				<label>Log in</label>
-				<input class="field" type="text" placeholder="Username" name="username" id="username" required />
-				<span class="errorMsg" id="username-err"></span>
-				<input class="field" type="password" placeholder="Password" name="password" id="password" required />
-				<span class="errorMsg" id="password-err"></span>
-				<span class="errorMsg" id="credentials-err"></span>
-				<input class="btn" type="submit" value="Sign in" name="login" />
-			</form>
+		<section class="wrapper">
+			<section>
+				<form class="form" id="login-form">
+					<label>Log in</label>
+					<input class="field" type="text" placeholder="Username" name="username" id="username" required />
+					<span class="errorMsg" id="username-err"></span>
+					<input class="field" type="password" placeholder="Password" name="password" id="password" required />
+					<span class="errorMsg" id="password-err"></span>
+					<span class="errorMsg" id="credentials-err"></span>
+					<input class="btn" type="submit" value="Sign in" name="login" />
+				</form>
+			</section>
 		</section>
+		
+		<?php include('./components/footer.php')?>
 
 		<footer></footer>
 		<script src="./static/js/loginStatus.js"></script>
