@@ -1,32 +1,32 @@
 <?php
 
-Class User{
+class User implements \JsonSerializable {
     private $id;
     private $username;
     private $email;
     private $password;
 
-    public function __construct(string $id, string $username, string $email, string $password){
-        this->id = $id;
-        this->username = $username;
-        this->email = $email;
-        this->password = $password;
+    public function __construct(int $id, string $username, string $email, string $password){
+        $this->id = $id;
+        $this->username = $username;
+        $this->email = $email;
+        $this->password = $password;
     }
 
     public function getId(): int {
-        return this->id;
+        return $this->id;
     }
 
     public function getUsername(): string {
-        return this->username;
+        return $this->username;
     }
 
     public function getEmail(): string {
-        return this->email;
+        return $this->email;
     }
 
     public function getPassword(): string {
-        return this->password;
+        return $this->password;
     }
 
     public static function createFromForm(array $assocUser): User{
@@ -34,5 +34,9 @@ Class User{
             $assocUser['username'], 
             $assocUser['email'], 
             $assocUser['password']);
+    }
+
+    public function jsonSerialize(){
+        return get_object_vars($this);
     }
 }

@@ -12,7 +12,7 @@ class Song implements \JsonSerializable {
     private $url; 
     private $text;
 
-    public function __construct(string $id, string $title, string $author, string $key, string $year, string $duration, 
+    public function __construct(int $id, string $title, string $author, string $key, int $year, string $duration, 
     int $tempo, string $signature, string $url, string $text) {
         $this->id = $id;
         $this->title = $title;
@@ -24,6 +24,10 @@ class Song implements \JsonSerializable {
         $this->signature = $signature;
         $this->url = $url;
         $this->text = $text;
+    }
+
+    public function setUrl($newUrl): void {
+        $this->url = $newUrl;
     }
 
     public function getId(): int {
@@ -44,6 +48,22 @@ class Song implements \JsonSerializable {
 
     public function getYear(): int {
         return $this->year;
+    }
+
+    public function getDuration(): string {
+        return $this->duration;
+    }
+
+    public function getTempo(): int {
+        return $this->tempo;
+    }
+
+    public function getSignature(): string {
+        return $this->signature;
+    }
+
+    public function getUrl(): string {
+        return $this->url;
     }
 
     public function getText(): string {
