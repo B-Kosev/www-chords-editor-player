@@ -28,11 +28,12 @@
 
 .devs,
 .github {
-	margin: 0 1em;
+	margin: 1em 1em;
 }
 
 .devs ul {
 	padding: 0;
+	margin: 0;
 }
 
 .devs ul li {
@@ -41,10 +42,6 @@
 
 .github {
 	display: block;
-	margin-block-start: 1em;
-	margin-block-end: 1em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
 	padding: 5px 0;
 }
 
