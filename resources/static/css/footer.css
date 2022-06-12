@@ -32,6 +32,34 @@
 	margin: 1em 1em;
 }
 
+.devs ul li a,
+.github a {
+	display: block;
+	position: relative;
+	padding: 0.2em 0;
+	overflow: hidden;
+}
+
+.devs ul li a::before,
+.github a::before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--text-on-dark-color);
+	transform: scaleX(0);
+	transform-origin: top left;
+	transition: transform 0.3s ease;
+}
+
+.devs a:hover::before,
+.github a:hover::before {
+	transform: scaleX(1);
+}
+
 .devs ul {
 	padding: 0;
 	margin: 0;
